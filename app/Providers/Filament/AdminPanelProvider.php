@@ -63,9 +63,11 @@ class AdminPanelProvider extends PanelProvider
             ->darkModeBrandLogo(fn() => view('filament.brand-logo-dark'))
             ->navigationGroups([
                 'Master Data',
+                'Kepegawaian',
+                'Manajemen PPDB',
                 'Manajemen Website',
                 'Manajemen Event',
-                'Profil Sekolah',
+                'Pengguna',
             ])
             ->plugins([
                 FilamentSettingsPlugin::make()

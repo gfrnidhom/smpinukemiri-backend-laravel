@@ -11,7 +11,9 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\TimePicker;
+use Filament\Forms\Components\ToggleButtons;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -98,12 +100,34 @@ class EventResource extends Resource
                                 ->label('Gambar')
                                 ->image(),
                         ]),
+
+
+                    TextInput::make('link')
+                        ->label('Link Pendaftaran')
+                        ->columnSpanFull()
+                        ->required(),
                     // ->relationship(),
                     Forms\Components\FileUpload::make('image')
                         ->label('Gambar')
                         ->image()
                         ->directory('events')
                         ->columnSpanFull(),
+                    ToggleButtons::make('status')
+                        ->required()
+                        ->inline()
+                        ->options([
+                            'active' => 'Aktif',
+                            'inactive' => 'Tidak Aktif',
+
+                        ])
+                        ->icons([
+                            'active' => 'heroicon-o-check-circle',
+                            'inactive' => 'heroicon-o-pencil',
+                        ])
+                        ->colors([
+                            'active' => 'success',
+                            'inactive' => 'danger',
+                        ]),
                 ])->columns(2)
             ]);
     }
@@ -122,10 +146,6 @@ class EventResource extends Resource
                     ->label('Tanggal')
                     ->date()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('start_time')
-                    ->label('Waktu Mulai'),
-                Tables\Columns\TextColumn::make('end_time')
-                    ->label('Waktu Berakhir'),
                 Tables\Columns\TextColumn::make('eventcategories.category_name')
                     ->label('Kategori')
                     ->numeric()
@@ -134,6 +154,13 @@ class EventResource extends Resource
                     ->label('Lokasi')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('status')
+                    ->label('Status')
+                    ->badge()
+                    ->color(fn(string $state): string => match ($state) {
+                        'active' => 'primary',
+                        'inactive' => 'danger'
+                    })->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -10,15 +10,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable
 {
 
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return str_ends_with($this->email, 'smp.pelem@smpn2purwosaribjn.sch.id');
+    // public function canAccessPanel(Panel $panel): bool
+    // {
+    //     return str_ends_with($this->email, 'smp.pelem@smpn2purwosaribjn.sch.id');
 
-        return true;
-    }
+    //     return true;
+    // }
 
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -29,9 +29,11 @@ class User extends Authenticatable implements FilamentUser
      * @var list<string>
      */
     protected $fillable = [
+        'username',
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**

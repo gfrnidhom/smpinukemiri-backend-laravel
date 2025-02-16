@@ -105,6 +105,7 @@ class PostResource extends Resource
                         ]),
                     Forms\Components\FileUpload::make('image')
                         ->label('Gambar')
+                        ->directory('blogs')
                         ->imageEditor()
                         ->imageEditorMode(2)
                         ->imageEditorViewportWidth('1920')

@@ -23,6 +23,8 @@ return new class extends Migration
             $table->unsignedBigInteger('event_category_id');
             $table->unsignedBigInteger('event_location_id');
             $table->string('image')->nullable();
+            $table->enum('status', ['active', 'inactive']);
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

@@ -20,6 +20,7 @@ class Event extends Model
         'event_category_id',
         'event_location_id',
         'image',
+        'status',
     ];
 
     public function eventCategories(): BelongsTo

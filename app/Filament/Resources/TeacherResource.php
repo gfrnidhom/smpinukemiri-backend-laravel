@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\ToggleButtons;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -21,7 +22,7 @@ class TeacherResource extends Resource
 {
     protected static ?string $model = Teacher::class;
 
-    protected static ?string $navigationGroup = 'Master Data';
+    protected static ?string $navigationGroup = 'Kepegawaian';
     protected static ?int $navigationSort = 1;
     protected static ?string $navigationLabel = 'Guru';
 
@@ -58,11 +59,10 @@ class TeacherResource extends Resource
                         ->tel()
                         ->maxLength(255)
                         ->default(null),
-                    RichEditor::make('address')
-                        ->label('Alamat Lengkap')
-                        ->columnSpanFull(),
+                    TextInput::make('birthplace')
+                        ->label('Tempat Lahir'),
                     Forms\Components\DatePicker::make('date_of_birth')
-                        ->label('Tanggal Kelahiran'),
+                        ->label('Tanggal Lahir'),
                     Select::make('gender')
                         ->label('Jenis Kelamin')
                         ->options([
@@ -71,16 +71,39 @@ class TeacherResource extends Resource
                             'other' => 'Lainnya',
                         ])
                         ->required(),
+                    Select::make('religion')
+                        ->label('Agama')
+                        ->options([
+                            'islam' => 'Islam',
+                            'christian' => 'Kristen',
+                            'catholic' => 'Katolik',
+                            'hindu' => 'Hindu',
+                            'buddha' => 'Buddha',
+                            'confucian' => 'Konghucu',
+                            'other' => 'Lainnya',
+                        ])
+                        ->required(),
+                    Forms\Components\DatePicker::make('hire_date')
+                        ->label('Tanggal Masuk Kerja'),
                     Forms\Components\TextInput::make('qualification')
-                        ->label('Prodi Kuliah')
+                        ->label('Jurusan Ijazah Terakhir')
+                        ->maxLength(255)
+                        ->default(null),
+                    Forms\Components\TextInput::make('employment_status')
+                        ->label('Status Kepagawaian')
                         ->maxLength(255)
                         ->default(null),
                     Forms\Components\TextInput::make('specialization')
-                        ->label('Keahlian/Mata Pelajaran')
+                        ->label('Mata Pelajaran yang di Ampu')
                         ->maxLength(255)
                         ->default(null),
-                    Forms\Components\DatePicker::make('hire_date')
-                        ->label('Tanggal Masuk Kerja'),
+                    RichEditor::make('address')
+                        ->label('Alamat Lengkap')
+                        ->columnSpanFull(),
+                    Forms\Components\FileUpload::make('image')
+                        ->image()
+                        ->directory('teacher')
+                        ->columnSpanFull(),
                     ToggleButtons::make('status')
                         ->required()
                         ->inline()
@@ -94,10 +117,6 @@ class TeacherResource extends Resource
                             'on_leave' => 'heroicon-o-check-circle',
                             'retired' => 'heroicon-o-clock',
                         ]),
-                    Forms\Components\FileUpload::make('image')
-                        ->image()
-                        ->directory('teacher')
-                        ->columnSpanFull(),
                 ])
                     ->columns(2)
             ]);

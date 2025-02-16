@@ -23,7 +23,7 @@ class ProgramResource extends Resource
 
     protected static ?string $navigationGroup = 'Master Data';
     protected static ?int $navigationSort = 4;
-    protected static ?string $navigationLabel = 'Program Unggulan';
+    protected static ?string $navigationLabel = 'Ekstrakurikuler';
 
     protected static ?string $navigationIcon = 'heroicon-m-squares-2x2';
 
@@ -37,16 +37,16 @@ class ProgramResource extends Resource
                     TitleWithSlugInput::make(
                         fieldTitle: 'program_name',
                         fieldSlug: 'slug',
-                        titleLabel: 'Nama Program',
-                        titlePlaceholder: 'Masukkan Nama Program...',
+                        titleLabel: 'Nama Ekstrakurikuler',
+                        titlePlaceholder: 'Masukkan Nama Ekstrakurikuler...',
                         slugLabel: 'Link:',
                     ),
                     RichEditor::make('description')
-                        ->label('Deskripsi Program')
+                        ->label('Deskripsi Ekstrakurikuler')
                         ->columnSpanFull(),
                     Forms\Components\FileUpload::make('image')
                         ->label('Gambar')
-                        ->directory('programs')
+                        ->directory('ekstrakurikuler')
                         ->image()
                         ->imageEditor(),
                 ])

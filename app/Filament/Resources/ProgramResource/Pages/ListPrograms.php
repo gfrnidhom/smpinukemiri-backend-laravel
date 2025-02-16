@@ -14,7 +14,7 @@ class ListPrograms extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-            ->label('Tambah Program')
+            ->label('Tambah Ekstrakurikuler')
             ->icon('heroicon-o-plus'),
         ];
     }
