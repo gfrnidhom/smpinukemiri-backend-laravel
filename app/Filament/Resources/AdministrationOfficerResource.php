@@ -24,6 +24,11 @@ class AdministrationOfficerResource extends Resource
     protected static ?int $navigationSort = 3;
     protected static ?string $navigationLabel = 'Pegawai Tata Usaha';
 
+    public function getTitle(): string
+    {
+        return 'Pegawai Tata Usaha';
+    }
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

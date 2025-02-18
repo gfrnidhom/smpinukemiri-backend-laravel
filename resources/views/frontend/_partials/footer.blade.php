@@ -1,190 +1,199 @@
-<!-- ==================== Footer Start Here ==================== -->
-<footer class="footer bg-main-25 position-relative z-1">
-    <img src="frontend/images/shapes/shape2.png" alt="" class="shape five animation-scalation">
-    <img src="frontend/images/shapes/shape6.png" alt="" class="shape one animation-scalation">
+ <!--==============================
+ Footer Area
+==============================-->
+ <footer class="footer-wrapper footer-layout8" data-bg-src="{{ asset('frontend') }}/img/update1/bg/footer_bg_3.jpg">
+     <div class="footer-top">
+         <div class="container">
+             <div class="footer-contact-wrap">
+                 <div class="footer-contact">
+                     <div class="footer-contact_icon icon-btn">
+                         <i class="fas fa-phone"></i>
+                     </div>
+                     <div class="media-body">
+                         <p class="footer-contact_text">No. Handphone/WA</p>
+                         <a href="tel+11234567890" class="footer-contact_link">{{ $settings['phone'] }}</a>
+                     </div>
+                 </div>
+                 <div class="divider"></div>
+                 <div class="footer-contact">
+                     <div class="footer-contact_icon icon-btn">
+                         <i class="fas fa-envelope"></i>
+                     </div>
+                     <div class="media-body">
+                         <p class="footer-contact_text">Email</p>
+                         <a href="mailto:hi@aduca-edu.com" class="footer-contact_link">{{ $settings['email'] }}</a>
+                     </div>
+                 </div>
+                 <div class="divider"></div>
+                 <div class="footer-contact">
+                     <div class="footer-contact_icon icon-btn">
+                         <i class="fas fa-share"></i>
+                     </div>
+                     <div class="media-body">
+                         <p class="footer-contact_text">Media Sosial Kami</p>
+                         <div class="th-social">
+                             <a href="{{ $settings['facebook'] }}"><i class="fab fa-facebook-f"></i></a>
+                             {{-- <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> --}}
+                             {{-- <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a> --}}
+                             <a href="{{ $settings['instagram'] }}"><i class="fab fa-instagram"></i></a>
+                             <a href="{{ $settings['tiktok'] }}"><i class="fab fa-tiktok"></i></a>
+                             <a href="{{ $settings['youtube'] }}"><i class="fab fa-youtube"></i></a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <div class="widget-area">
+         <div class="container">
+             <div class="row justify-content-between">
+                 <div class="col-md-6 col-xl-3">
+                     <div class="widget newsletter-widget footer-widget style2">
+                         <div class="newsletter-logo mb-30">
+                             <a href="{{ route('home-dashboard') }}"><img src="{{ $settings['second_logo'] }}"
+                                     width="270px" alt="SMP Islam Nurul Ulum"></a>
+                         </div>
+                         <p class="footer-text">Subscribe our newsletter to get our latest
+                             Update & news</p>
+                         <form class="newsletter-form form-group">
+                             <input class="form-control" type="email" placeholder="Email Email" required="">
+                             <i class="far fa-envelope"></i>
+                             <button type="submit" class="th-btn style3">Subscribe Now <i
+                                     class="far fa-arrow-right ms-1"></i></button>
+                         </form>
+                     </div>
+                 </div>
+                 <div class="col-md-6 col-xl-auto">
+                     <div class="widget widget_nav_menu footer-widget style2">
+                         <h3 class="widget_title">Kategori</h3>
+                         <div class="menu-all-pages-container">
+                             <ul class="menu">
+                                 <li><a href="about.html">About Us</a></li>
+                                 <li><a href="course.html">Resource Center</a></li>
+                                 <li><a href="course.html">Careers</a></li>
+                                 <li><a href="team.html">Instructor</a></li>
+                                 <li><a href="contact.html">Become A Teacher</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-md-6 col-xl-auto">
+                     <div class="widget widget_nav_menu footer-widget style2">
+                         <h3 class="widget_title">Profil Kami</h3>
+                         <div class="menu-all-pages-container">
+                             <ul class="menu">
+                                 <li><a href="course.html">Visi dan Misi</a></li>
+                                 <li><a href="course-2.html">Sejarah Sekolah</a></li>
+                                 <li><a href="course-3.html">Kepala Sekolah</a></li>
+                                 <li><a href="course-details.html">Guru & Staff</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-md-6 col-xl-auto">
+                     <div class="widget footer-widget style2">
+                         <h3 class="widget_title">RECENT GALLERY</h3>
+                         <div class="sidebar-gallery">
+                             <div class="gallery-thumb">
+                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-1.jpg" alt="Gallery Image">
+                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-1.jpg"
+                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
+                             </div>
+                             <div class="gallery-thumb">
+                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-2.jpg" alt="Gallery Image">
+                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-2.jpg"
+                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
+                             </div>
+                             <div class="gallery-thumb">
+                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-3.jpg" alt="Gallery Image">
+                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-3.jpg"
+                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
+                             </div>
+                             <div class="gallery-thumb">
+                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-4.jpg" alt="Gallery Image">
+                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-4.jpg"
+                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
+                             </div>
+                             <div class="gallery-thumb">
+                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-5.jpg"
+                                     alt="Gallery Image">
+                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-5.jpg"
+                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
+                             </div>
+                             <div class="gallery-thumb">
+                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-6.jpg"
+                                     alt="Gallery Image">
+                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-6.jpg"
+                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <div class="copyright-wrap">
+         <div class="container">
+             <div class="row justify-content-between align-items-center">
+                 <div class="col-lg-6">
+                     <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2023 <a
+                             href="https://themeforest.net/user/themeholy">Themeholy</a>. All Rights Reserved.</p>
+                 </div>
+                 <div class="col-lg-6 text-end d-none d-lg-block">
+                     <div class="footer-links">
+                         <ul>
+                             <li><a href="about.html">Privacy Policy</a></li>
+                             <li><a href="about.html">Terms of Use</a></li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </footer>
 
-    <div class="py-120 ">
-        <div class="container container-two">
-            <div class="row row-cols-xxl-5 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-5">
-                <div class="col" data-aos="fade-up" data-aos-duration="300">
-                    <div class="footer-item">
-                        <div class="footer-item__logo">
-                            <a href="{{ route('home') }}"> <img
-                                    src="{{ asset('frontend/images/logo/logo-colour.png') }}" alt=""></a>
-                        </div>
-                        <p class="my-32">Mewadahi Bakat dan Minat Meraih Masa Depan</p>
-                        <ul class="social-list flex-align gap-24">
-                            <li class="social-list__item">
-                                <a href="https://www.facebook.com"
-                                    class="text-main-600 text-2xl hover-text-main-two-600"><i
-                                        class="ph-bold ph-facebook-logo"></i></a>
-                            </li>
-                            <li class="social-list__item">
-                                <a href="https://www.twitter.com"
-                                    class="text-main-600 text-2xl hover-text-main-two-600"> <i
-                                        class="ph-bold ph-twitter-logo"></i></a>
-                            </li>
-                            <li class="social-list__item">
-                                <a href="https://www.linkedin.com"
-                                    class="text-main-600 text-2xl hover-text-main-two-600"><i
-                                        class="ph-bold ph-instagram-logo"></i></a>
-                            </li>
-                            <li class="social-list__item">
-                                <a href="https://www.pinterest.com"
-                                    class="text-main-600 text-2xl hover-text-main-two-600"><i
-                                        class="ph-bold ph-pinterest-logo"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-duration="400">
-                    <div class="footer-item">
-                        <h4 class="footer-item__title mb-32">Halaman</h4>
-                        <ul class="footer-menu">
-                            <li class="mb-16">
-                                <a href=""
-                                    class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Program</a>
-                            </li>
-                            <li class="mb-16">
-                                <a href="{{ route('events') }}"
-                                    class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Event</a>
-                            </li>
-                            <li class="mb-16">
-                                <a href=""
-                                    class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Team</a>
-                            </li>
-                            <li class="mb-16">
-                                <a href="{{ route('contact-us') }}"
-                                    class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Kontak</a>
-                            </li>
+ <!-- Scroll To Top -->
+ <div class="scroll-top">
+     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+             style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+         </path>
+     </svg>
+ </div>
+ <!--********************************
+        Code End  Here
+******************************** -->
 
-                        </ul>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-duration="600">
-                    <div class="footer-item">
-                        <h4 class="footer-item__title mb-32">Kategori</h4>
-                        <ul class="footer-menu">
-                            <li class="mb-16">
-                                <a href="courses.html"
-                                    class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Berita</a>
-                            </li>
-                            <li class="mb-16">
-                                <a href="courses.html"
-                                    class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Pengembangan
-                                    Talenta</a>
-                            </li>
-                            <li class="mb-16">
-                                <a href="courses.html"
-                                    class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Kilas
-                                    Event</a>
-                            </li>
+ <!--==============================
+All Js File
+============================== -->
+ <!-- Jquery -->
+ <script src="{{ asset('frontend') }}/js/vendor/jquery-3.6.0.min.js"></script>
+ <!-- Slick Slider -->
+ <script src="{{ asset('frontend') }}/js/slick.min.js"></script>
+ <!-- Bootstrap -->
+ <script src="{{ asset('frontend') }}/js/bootstrap.min.js"></script>
+ <!-- Magnific Popup -->
+ <script src="{{ asset('frontend') }}/js/jquery.magnific-popup.min.js"></script>
+ <!-- Counter Up -->
+ <script src="{{ asset('frontend') }}/js/jquery.counterup.min.js"></script>
+ <!-- Circle Progress -->
+ <script src="{{ asset('frontend') }}/js/circle-progress.js"></script>
+ <!-- Range Slider -->
+ <script src="{{ asset('frontend') }}/js/jquery-ui.min.js"></script>
+ <!-- Isotope Filter -->
+ <script src="{{ asset('frontend') }}/js/imagesloaded.pkgd.min.js"></script>
+ <script src="{{ asset('frontend') }}/js/isotope.pkgd.min.js"></script>
+ <!-- Tilt JS -->
+ <script src="{{ asset('frontend') }}/js/tilt.jquery.min.js"></script>
+ <!-- Tweenmax JS -->
+ <script src="{{ asset('frontend') }}/js/tweenmax.min.js"></script>
+ <!-- Nice Select JS -->
+ <script src="{{ asset('frontend') }}/js/nice-select.min.js"></script>
 
-                        </ul>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-duration="800">
-                    <div class="footer-item">
-                        <h4 class="footer-item__title mb-32">Kontak Kami</h4>
-                        <div class="flex-align gap-20 mb-24">
-                            <span class="icon d-flex text-32 text-main-600"><i class="ph ph-phone"></i></span>
-                            <div class="">
-                                <a href="tel:(207)555-0119"
-                                    class="text-neutral-500 d-block hover-text-main-600 mb-4">0882 2614 9241</a>
+ <!-- Main Js File -->
+ <script src="{{ asset('frontend') }}/js/main.js"></script>
 
-                            </div>
-                        </div>
-                        <div class="flex-align gap-20 mb-24">
-                            <span class="icon d-flex text-32 text-main-600"><i class="ph ph-envelope-open"></i></span>
-                            <div class="">
-                                <a href="mailto:dwallo@gmail.com"
-                                    class="text-neutral-500 d-block hover-text-main-600 mb-4">smp.pelem@gmail.com</a>
+ </body>
 
-                            </div>
-                        </div>
-                        <div class="flex-align gap-20 mb-24">
-                            <span class="icon d-flex text-32 text-main-600"><i class="ph ph-map-trifold"></i></span>
-                            <div class="">
-                                <span class="text-neutral-500 d-block mb-4">Purwosari, Bojonegoro, jawa Timur</span>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="footer-item">
-                        <h4 class="footer-item__title mb-32">Berlangganan di sini</h4>
-                        <p class="text-neutral-500">Masukkan alamat email Anda untuk mendaftar langganan newsletter
-                            kami
-                        </p>
-                        <form action="#" class="mt-24 position-relative">
-                            <input type="email"
-                                class="form-control bg-white shadow-none border border-neutral-30 rounded-pill h-52 ps-24 pe-40 focus-border-main-600"
-                                placeholder="Email...">
-                            <button type="submit"
-                                class="w-36 h-36 flex-center rounded-circle bg-main-600 text-white hover-bg-main-800 position-absolute top-50 translate-middle-y inset-inline-end-0 me-8">
-                                <i class="ph ph-paper-plane-tilt"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <!-- bottom Footer -->
-        <div class="bottom-footer bg-main-25 border-top border-dashed border-main-100 border-0 py-32">
-            <div class="container container-two">
-                <div class="bottom-footer__inner flex-between gap-3 flex-wrap">
-                    <p class="bottom-footer__text" data-aos="fade-right" data-aos-duration="1000"> Copyright &copy;
-                        {{ \Carbon\Carbon::now()->format('Y') }} <span class="fw-semibold">SMP
-                            Negeri 2 Purwosari</span> All Rights
-                        Reserved.</p>
-                    <div class="footer-links" data-aos="fade-left" data-aos-duration="1000">
-                        <a href="#"
-                            class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Privacy
-                            Policy</a>
-                        <a href="#"
-                            class="text-neutral-500 hover-text-main-600 hover-text-decoration-underline">Terms &
-                            Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- ==================== Footer End Here ==================== -->
-
-
-<!-- Jquery js -->
-<script src="{{ asset('frontend/js/jquery-3.7.1.min.js') }}"></script>
-<!-- Bootstrap Bundle Js -->
-<script src="{{ asset('frontend/js/boostrap.bundle.min.js') }}"></script>
-<!-- select2 Js -->
-<script src="{{ asset('frontend/js/select2.min.js') }}"></script>
-<!-- Phosphor Icon Js -->
-<script src="{{ asset('frontend/js/phosphor-icon.js') }}"></script>
-<!-- Slick js -->
-<script src="{{ asset('frontend/js/slick.min.js') }}"></script>
-<!-- Slick js -->
-<script src="{{ asset('frontend/js/counter.min.js') }}"></script>
-<!-- magnific popup -->
-<script src="{{ asset('frontend/js/magnific-popup.min.js') }}"></script>
-<!-- Jquery Ui js -->
-<script src="{{ asset('frontend/js/jquery-ui.js') }}"></script>
-<!-- plyr Js -->
-<script src="{{ asset('frontend/js/plyr.js') }}"></script>
-<!-- vanilla Tilt -->
-<script src="{{ asset('frontend/js/vanilla-tilt.min.js') }}"></script>
-<!-- wow -->
-<script src="{{ asset('frontend/js/wow.min.js') }}"></script>
-
-<script src="{{ asset('frontend/js/aos.js') }}"></script>
-
-<!-- main js -->
-<script src="{{ asset('frontend/js/main.js') }}"></script>
-
-
-</body>
-
-</html>
+ </html>

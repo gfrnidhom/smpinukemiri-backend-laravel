@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Settings\AboutUs;
+use App\Filament\Pages\Settings\ContactUs;
 use App\Filament\Pages\Settings\Settings;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -73,6 +75,8 @@ class AdminPanelProvider extends PanelProvider
                 FilamentSettingsPlugin::make()
                     ->pages([
                         Settings::class,
+                        AboutUs::class,
+                        ContactUs::class,
                     ])
             ]);;
     }

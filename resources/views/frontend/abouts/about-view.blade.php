@@ -2,291 +2,647 @@
 
 
 @section('main-content')
-    <!-- ==================== Breadcrumb Start Here ==================== -->
-    <section class="breadcrumb py-120 bg-main-25 position-relative z-1 overflow-hidden mb-0">
-        {{-- <img src="{{ asset('') }}frontend/images/shapes/shape1.png" alt="" class="shape one animation-rotation d-md-block d-none"> --}}
-        <img src="{{ asset('') }}frontend/images/shapes/shape2.png" alt=""
-            class="shape two animation-scalation d-md-block d-none">
-        {{-- <img src="{{ asset('') }}frontend/images/shapes/shape3.png" alt="" class="shape eight animation-walking d-md-block d-none"> --}}
-        {{-- <img src="{{ asset('') }}frontend/images/shapes/shape5.png" alt="" class="shape six animation-walking d-md-block d-none"> --}}
-        <img src="{{ asset('') }}frontend/images/shapes/shape4.png" alt="" class="shape four animation-scalation">
-        {{-- <img src="{{ asset('') }}frontend/images/shapes/shape4.png" alt="" class="shape nine animation-scalation"> --}}
-
+    <!--==============================
+        Breadcumb
+    ============================== -->
+    <div class="breadcumb-wrapper " data-bg-src="{{ asset('frontend') }}/img/bg/breadcumb-bg.jpg" data-overlay="title" data-opacity="8">
+        <div class="breadcumb-shape" data-bg-src="{{ asset('frontend') }}/img/bg/breadcumb_shape_1_1.png">
+        </div>
+        <div class="shape-mockup breadcumb-shape2 jump d-lg-block d-none" data-right="30px" data-bottom="30px">
+            <img src="{{ asset('frontend') }}/img/bg/breadcumb_shape_1_2.png" alt="shape">
+        </div>
+        <div class="shape-mockup breadcumb-shape3 jump-reverse d-lg-block d-none" data-left="50px" data-bottom="80px">
+            <img src="{{ asset('frontend') }}/img/bg/breadcumb_shape_1_3.png" alt="shape">
+        </div>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="breadcrumb__wrapper">
-                        <h1 class="breadcrumb__title display-4 fw-semibold text-center"> Tentang Kami</h1>
-                        <ul class="breadcrumb__list d-flex align-items-center justify-content-center gap-4">
-                            <li class="breadcrumb__item">
-                                <a href="{{ route('home') }}"
-                                    class="breadcrumb__link text-neutral-500 hover-text-main-600 fw-medium">
-                                    <i class="text-lg d-inline-flex ph-bold ph-house"></i> Beranda</a>
-                            </li>
-                            <li class="breadcrumb__item">
-                                <i class="text-neutral-500 d-flex ph-bold ph-caret-right"></i>
-                            </li>
-                            <li class="breadcrumb__item">
-                                <a href="course.html"
-                                    class="breadcrumb__link text-neutral-500 hover-text-main-600 fw-medium"> </a>
-                            </li>
-                            <li class="breadcrumb__item d-none">
-                                <i class="text-neutral-500 d-flex ph-bold ph-caret-right"></i>
-                            </li>
-                            <li class="breadcrumb__item">
-                                <span class="text-main-two-600"> Tentang Kami </span>
-                            </li>
-                        </ul>
+            <div class="breadcumb-content text-center">
+                <h1 class="breadcumb-title">About Us</h1>
+                <ul class="breadcumb-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li>About Us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--==============================
+    Service Area
+    ==============================-->
+    <section class="overflow-hidden space">
+        <div class="container">
+            <div class="title-area text-center">
+                <span class="sub-title"><i class="fal fa-book me-2"></i> What We Do</span>
+                <h2 class="sec-title">Online Education Tailored to You</h2>
+            </div>
+            <div class="row gy-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card style3">
+                        <div class="service-card-content">
+                            <div class="service-card-icon">
+                                <img src="{{ asset('frontend') }}/img/icon/service-icon-3-1.svg" alt="Icon">
+                            </div>
+                            <h3 class="box-title">Learn From Anywhere</h3>
+                            <p class="service-card-text"> Competently unleash competitive initiatives for alternative
+                                interfaces. Enthusiastically supply resource eveling platforms</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card style3">
+                        <div class="service-card-content">
+                            <div class="service-card-icon">
+                                <img src="{{ asset('frontend') }}/img/icon/service-icon-3-2.svg" alt="Icon">
+                            </div>
+                            <h3 class="box-title">Expert Instructor</h3>
+                            <p class="service-card-text"> Competently unleash competitive initiatives for alternative
+                                interfaces. Enthusiastically supply resource eveling platforms</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card style3">
+                        <div class="service-card-content">
+                            <div class="service-card-icon">
+                                <img src="{{ asset('frontend') }}/img/icon/service-icon-3-3.svg" alt="Icon">
+                            </div>
+                            <h3 class="box-title">24/7 Live Support</h3>
+                            <p class="service-card-text"> Competently unleash competitive initiatives for alternative
+                                interfaces. Enthusiastically supply resource eveling platforms</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ==================== Breadcrumb End Here ==================== -->
-    <!-- ================================ About Three Section Start ==================================== -->
-    <section class="about-three pt-120 position-relative z-1">
-        <div class="position-relative">
-            <div class="container">
-                <div class="row gy-xl-0 gy-5 flex-wrap-reverse align-items-center">
-                    <div class="col-xl-6 pe-xl-5">
-                        <div class="about-three-thumbs position-relative me-xxl-5">
-                            <div class="row gy-4">
-                                <div class="col-sm-8">
-                                    <img src="{{ asset('frontend/images/youtube/cover-event.jpg') }}" alt=""
-                                        class="about-three-thumbs__one rounded-16 " width="900px">
+    <!--==============================
+    About Area
+    ==============================-->
+    <div class="overflow-hidden overflow-hidden bg-smoke space" id="about-sec" data-bg-src="{{ asset('frontend') }}/img/bg/about-5-bg.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 mb-50 mb-xl-0">
+                    <div class="img-box4">
+                        <div class="img1">
+                            <img class="tilt-active" src="{{ asset('frontend') }}/img/normal/about_5_1.png" alt="About">
+                        </div>
+                        <div class="about-grid">
+                            <h3 class="about-grid_year"><span class="counter-number">10</span>k+</h3>
+                            <p class="about-grid_text">Students Active Our Courses</p>
+                        </div>
+                        <div class="img2">
+                            <img class="tilt-active" src="{{ asset('frontend') }}/img/normal/about_5_2.png" alt="About">
+                        </div>
+                        <div class="shape1 shape-mockup jump" data-bottom="0" data-left="-46px">
+                            <img src="{{ asset('frontend') }}/img/normal/about_5_1shape.png" alt="About">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="title-area mb-35">
+                        <span class="sub-title"><i class="fal fa-book me-2"></i> About Our University</span>
+                        <h2 class="sec-title">Welcome to Edura University.</h2>
+                    </div>
+                    <p class="mt-n2 mb-25">Collaboratively simplify user friendly networks after principle centered
+                        coordinate effective methods of empowerment distributed niche markets pursue market positioning
+                        web-readiness after resource sucking applications. </p>
+                    <div class="row mb-35 gy-4">
+                        <div class="col-lg-6">
+                            <div class="about-grid3">
+                                <div class="about-grid-icon"><img src="{{ asset('frontend') }}/img/icon/about-grid-icon2-1.svg"
+                                        alt="icon"></div>
+                                <div class="details">
+                                    <h5>Undergraduate Education</h5>
+                                    <p>With flexible courses</p>
                                 </div>
-                                <div class="col-sm-4">
-
-                                    <img src="{{ asset('frontend/images/home/home-slider.png') }}" alt=""
-                                        class="about-three-thumbs__two rounded-16 w-100">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-grid3">
+                                <div class="icon"><img src="{{ asset('frontend') }}/img/icon/about-grid-icon2-2.svg" alt="icon"></div>
+                                <div class="details">
+                                    <h5>Postgraduate Education</h5>
+                                    <p>Study flexibly online</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6">
-                        <div class="about-three-content">
-                            <div class="mb-40">
-                                <div class="flex-align d-inline-flex gap-8 mb-16">
-                                    <span class="text-main-600 text-2xl d-flex"><i class="ph-bold ph-book-open"></i></span>
-                                    <h5 class="text-main-600 mb-0">Tentang Kami</h5>
-                                </div>
-                                <h2 class="mb-24">Mewadahi Bakat dan Minat Meraih Masa Depan</h2>
-                                <p class="text-neutral-500 text-line-2">etiap anak dilahirkan memiliki
-                                    kelebihan dan kekurangan masing-masing, unik dan tidak ada yang bisa menyamainya.
-                                    Berangkat
-                                    dari itu SMP Negeri 2 Purwosari SMP Negeri 2 Purwosari tidak hanya fokus pada kemampuan
-                                    akademik semata, namun juga aneka potensi siswa</p>
+                    <div class="row align-items-center">
+                        <div class="col-md-auto">
+                            <div class="about-grid_img mb-30 mb-md-0">
+                                <img src="{{ asset('frontend') }}/img/normal/about_1_4.png" alt="img">
                             </div>
-
-                            <div class="grid-cols-2">
-                                @foreach ($programs as $program)
-                                    <div class="flex-align align-items-start gap-20 animation-item">
-                                        <span
-                                            class="flex-shrink-0 w-60 h-60 flex-center d-inline-flex bg-white text-main-600 text-40 rounded-16 box-shadow-md">
-                                            <img src="{{ asset('storage') . '/' . $program->image }}" width="40px"
-                                                class="animate__swing" alt="">
-                                        </span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="text-neutral-800 text-xl fw-medium mb-8">{{ $program->program_name }}
-                                            </h6>
-                                            <div class="flex-align gap-8 text-neutral-500 text-line-2"
-                                                style="font-size: 12px">
-
-                                                {{ strip_tags($program->description) }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-
+                        </div>
+                        <div class="col-md-7">
+                            <div class="checklist">
+                                <ul>
+                                    <li>Get access to 4,000+ of our top courses</li>
+                                    <li>Popular topics to learn now</li>
+                                    <li>Find the right instructor for you</li>
+                                </ul>
                             </div>
+                        </div>
+                    </div>
+                    <a href="about.html" class="th-btn mt-40">ABOUT MORE<i
+                            class="fa-regular fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==============================
+    Counter Area
+    ==============================-->
+    <div class="counter-area-2" data-bg-src="{{ asset('frontend') }}/img/bg/counter-bg_1.png">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                    <div class="counter-card">
+                        <h2 class="counter-card_number"><span class="counter-number">3.9</span>k<span
+                                class="fw-normal">+</span></h2>
+                        <p class="counter-card_text"><strong>Successfully</strong> Trained</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                    <div class="counter-card">
+                        <h2 class="counter-card_number"><span class="counter-number">15.8</span>k<span
+                                class="fw-normal">+</span></h2>
+                        <p class="counter-card_text"><strong>Classes</strong> Completed</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                    <div class="counter-card">
+                        <h2 class="counter-card_number"><span class="counter-number">97.5</span>k<span
+                                class="fw-normal">+</span></h2>
+                        <p class="counter-card_text"><strong>Satisfaction</strong> Rate</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3 counter-card-wrap">
+                    <div class="counter-card">
+                        <h2 class="counter-card_number"><span class="counter-number">100.2</span>k<span
+                                class="fw-normal">+</span></h2>
+                        <p class="counter-card_text"><strong>Students</strong> Community</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==============================
+    Team Area
+    ==============================-->
+    <section class="space overflow-hidden">
+        <div class="shape-mockup team2-bg-shape1 jump-reverse d-lg-block d-none" data-left="-2%" data-top="0">
+            <img src="{{ asset('frontend') }}/img/team/team-shape_1_1.png" alt="img">
+        </div>
 
-                            <div class="pt-40 border-top border-neutral-50 mt-40 border-dashed border-0">
-                                <a href="{{ route('flagship-programs') }}"
-                                    class="btn btn-main rounded-pill flex-align d-inline-flex gap-8">
-                                    Lihat Program
-                                    <i class="ph-bold ph-arrow-up-right d-flex text-lg"></i>
+        <div class="shape-mockup team2-bg-shape5 jump d-xxl-block d-none" data-right="-7%" data-top="40%">
+            <img src="{{ asset('frontend') }}/img/team/team-shape_1_5.png" alt="img">
+        </div>
+
+        <div class="container">
+            <div class="title-area text-center">
+                <span class="sub-title"><i class="fal fa-book me-2"></i> Our Instructor</span>
+                <h2 class="sec-title">Meet Our Expert Instructor</h2>
+            </div>
+            <div class="row th-carousel slider-shadow" data-slide-show="4" data-lg-slide-show="3" data-md-slide-show="2"
+                data-sm-slide-show="2" data-xs-slide-show="1">
+                <!-- Single Item -->
+                <div class="col-lg-6">
+                    <div class="team-card style2">
+                        <div class="team-img-wrap">
+                            <svg class="team-shape" xmlns="http://www.w3.org/2000/svg" width="327" height="337"
+                                viewBox="0 0 327 337" fill="none">
+                                <path
+                                    d="M158.167 331C158.167 333.946 160.555 336.333 163.5 336.333C166.446 336.333 168.833 333.946 168.833 331C168.833 328.054 166.446 325.667 163.5 325.667C160.555 325.667 158.167 328.054 158.167 331ZM158.167 6C158.167 8.94552 160.555 11.3333 163.5 11.3333C166.446 11.3333 168.833 8.94552 168.833 6C168.833 3.05448 166.446 0.666667 163.5 0.666667C160.555 0.666667 158.167 3.05448 158.167 6ZM325 167.5C325 257.254 253.238 330 163.5 330V332C254.359 332 327 258.343 327 167.5H325ZM2.00012 167.5C2.00012 77.7618 73.7458 7 163.5 7V5C72.6574 5 0.00012207 76.6411 0.00012207 167.5H2.00012Z"
+                                    fill="#0D5EF4" />
+                            </svg>
+                            <div class="team-img">
+                                <img src="{{ asset('frontend') }}/img/team/team_2_1.jpg" alt="Team">
+                            </div>
+                            <div class="team-social">
+                                <a href="#" class="icon-btn">
+                                    <i class="far fa-plus"></i>
                                 </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ================================ About Three Section End ==================================== -->
-
-    <!-- ========================== Counter Section start ============================== -->
-    <section class="counter py-120">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-xl-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-duration="200">
-                    <div
-                        class="counter-item animation-item h-100 text-center px-16 py-32 rounded-12 bg-main-25 border border-neutral-30">
-                        <span
-                            class="w-80 h-80 flex-center d-inline-flex bg-white text-main-600 text-40 rounded-circle box-shadow-md mb-24">
-                            <i class="animate__wobble ph ph-users"></i>
-                        </span>
-                        <h2 class="display-four mb-16 text-neutral-700 counter">6+</h2>
-                        <span class="text-neutral-500 text-lg">Program Unggulan</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-duration="400">
-                    <div
-                        class="counter-item animation-item h-100 text-center px-16 py-32 rounded-12 bg-main-two-25 border border-neutral-30">
-                        <span
-                            class="w-80 h-80 flex-center d-inline-flex bg-white text-main-two-600 text-40 rounded-circle box-shadow-md mb-24">
-                            <i class="animate__wobble ph ph-video-camera"></i>
-                        </span>
-                        <h2 class="display-four mb-16 text-neutral-700 counter"> 700+</h2>
-                        <span class="text-neutral-500 text-lg">Siswa</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-duration="600">
-                    <div
-                        class="counter-item animation-item h-100 text-center px-16 py-32 rounded-12 bg-main-25 border border-neutral-30">
-                        <span
-                            class="w-80 h-80 flex-center d-inline-flex bg-white text-main-600 text-40 rounded-circle box-shadow-md mb-24">
-                            <i class="animate__wobble ph ph-thumbs-up"></i>
-                        </span>
-                        <h2 class="display-four mb-16 text-neutral-700 counter">2000+</h2>
-                        <span class="text-neutral-500 text-lg">Follower</span>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-duration="800">
-                    <div
-                        class="counter-item animation-item h-100 text-center px-16 py-32 rounded-12 bg-main-two-25 border border-neutral-30">
-                        <span
-                            class="w-80 h-80 flex-center d-inline-flex bg-white text-main-two-600 text-40 rounded-circle box-shadow-md mb-24">
-                            <i class="animate__wobble ph ph-users-three"></i>
-                        </span>
-                        <h2 class="display-four mb-16 text-neutral-700 counter">25+</h2>
-                        <span class="text-neutral-500 text-lg">Mitra Inovasi</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ========================== Counter Section End ============================== -->
-
-    <!-- ========================== Brand Section Start =========================== -->
-    {{-- <div class="brand wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
-        <div class="container container--lg">
-            <div class="brand-box py-80 px-16 ">
-                <h5 class="mb-40 text-center text-neutral-500">TRUSTED BY OVER 17,300 GREAT TEAMS</h5>
-                <div class="container">
-                    <div class="brand-slider">
-                        <div class="brand-slider__item px-24">
-                            <img src="assets/images/thumbs/brand-img1.png" alt="">
-                        </div>
-                        <div class="brand-slider__item px-24">
-                            <img src="assets/images/thumbs/brand-img2.png" alt="">
-                        </div>
-                        <div class="brand-slider__item px-24">
-                            <img src="assets/images/thumbs/brand-img3.png" alt="">
-                        </div>
-                        <div class="brand-slider__item px-24">
-                            <img src="assets/images/thumbs/brand-img4.png" alt="">
-                        </div>
-                        <div class="brand-slider__item px-24">
-                            <img src="assets/images/thumbs/brand-img5.png" alt="">
-                        </div>
-                        <div class="brand-slider__item px-24">
-                            <img src="assets/images/thumbs/brand-img6.png" alt="">
-                        </div>
-                        <div class="brand-slider__item px-24">
-                            <img src="assets/images/thumbs/brand-img7.png" alt="">
-                        </div>
-                        <div class="brand-slider__item px-24">
-                            <img src="assets/images/thumbs/brand-img3.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- ========================== Brand Section End =========================== -->
-
-    <!-- =================================== Video Section Start ============================= -->
-    <section class="video">
-        <div class="container">
-            <div class="section-heading text-center">
-                <div class="flex-align d-inline-flex gap-8 mb-16">
-                    <span class="text-main-600 text-2xl d-flex"><i class="ph-bold ph-book-open"></i></span>
-                    <h5 class="text-main-600 mb-0">Kegiatan Sekolah</h5>
-                </div>
-                <h2 class="mb-24">PRADA Higlights</h2>
-                <p class="">Selamat datang di kampus kami yang penuh semangat, di mana pembelajaran menjadi hidup
-                    dalam lingkungan yang dinamis dan inspiratif..</p>
-            </div>
-        </div>
-
-        <div class="video-img position-relative half-bg">
-            <div class="container">
-                <img src="{{ asset('storage/cover/cover-about-us.jpg') }}" class="rounded-12 cover-img" alt="">
-                <a href="https://www.youtube.com/watch?v=oFbaCU16pwk"
-                    class="play-button position-absolute start-50 top-50 translate-middle z-1 w-72 h-72 flex-center bg-main-two-600 text-white rounded-circle text-2xl">
-                    <i class="ph-fill ph-play"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- =================================== Video Section End ============================= -->
-
-    <!-- ===================================== Testimonials Section Three Start ================================= -->
-    <section class="testimonials-three py-120 bg-main-25 position-relative z-1 overflow-hidden">
-        <img src="assets/images/shapes/shape2.png" alt="" class="shape two animation-scalation">
-        <img src="assets/images/shapes/shape6.png" alt="" class="shape four animation-scalation">
-        <img src="assets/images/shapes/shape4.png" alt="" class="shape one animation-scalation">
-
-        <div class="container">
-            <div class="row gy-4 align-items-center flex-wrap-reverse">
-                <div class="col-xl-7">
-                    <div class="testimonials-three-slider">
-                        @foreach ($testimonials as $testi)
-                            <div class="testimonials-three-item bg-white p-24 rounded-12 box-shadow-md">
-                                <div class="w-90 h-90 rounded-circle position-relative mb-4">
-                                    <img src="{{ asset('storage') . '/' . $testi->image }}" alt=""
-                                        class="cover-img rounded-circle">
-                                    <span
-                                        class="w-40 h-40 bg-main-two-600 flex-center border border-white border-2 rounded-circle position-absolute inset-block-end-0 inset-inline-end-0 mt--5 me--5">
-                                        <img src="assets/images/icons/quote-two-icon.png" alt="">
-                                    </span>
+                                <div class="th-social">
+                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
                                 </div>
-                                <p class="text-neutral-500 my-24" style="font-size: 12px">
-                                    "{{ strip_tags($testi->content) }}"</p>
-
-                                <h4 class="mb-16 text-lg">{{ $testi->name }}</h4>
-                                <span class="text-neutral-500"
-                                    style="font-size: 12px">{{ $testi->status_position }}</span>
                             </div>
-                        @endforeach
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-title"><a href="team-details.html">Hirmar Ubunti</a></h3>
+                            <span class="team-desig">Instructor</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-xl-5 ps-xl-5">
-                    <div class="flex-align d-inline-flex gap-8 mb-16 wow bounceInDown">
-                        <span class="text-main-600 text-2xl d-flex"><i class="ph-bold ph-book-open"></i></span>
-                        <h5 class="text-main-600 mb-0">Apa Kata Mereka?</h5>
+                <!-- Single Item -->
+                <div class="col-lg-6">
+                    <div class="team-card style2">
+                        <div class="team-img-wrap">
+                            <svg class="team-shape" xmlns="http://www.w3.org/2000/svg" width="327" height="337"
+                                viewBox="0 0 327 337" fill="none">
+                                <path
+                                    d="M158.167 331C158.167 333.946 160.555 336.333 163.5 336.333C166.446 336.333 168.833 333.946 168.833 331C168.833 328.054 166.446 325.667 163.5 325.667C160.555 325.667 158.167 328.054 158.167 331ZM158.167 6C158.167 8.94552 160.555 11.3333 163.5 11.3333C166.446 11.3333 168.833 8.94552 168.833 6C168.833 3.05448 166.446 0.666667 163.5 0.666667C160.555 0.666667 158.167 3.05448 158.167 6ZM325 167.5C325 257.254 253.238 330 163.5 330V332C254.359 332 327 258.343 327 167.5H325ZM2.00012 167.5C2.00012 77.7618 73.7458 7 163.5 7V5C72.6574 5 0.00012207 76.6411 0.00012207 167.5H2.00012Z"
+                                    fill="#0D5EF4" />
+                            </svg>
+                            <div class="team-img">
+                                <img src="{{ asset('frontend') }}/img/team/team_2_2.jpg" alt="Team">
+                            </div>
+                            <div class="team-social">
+                                <a href="#" class="icon-btn">
+                                    <i class="far fa-plus"></i>
+                                </a>
+                                <div class="th-social">
+                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-title"><a href="team-details.html">Lily Michelle</a></h3>
+                            <span class="team-desig">Founder & CEO</span>
+                        </div>
                     </div>
-                    <h2 class="mb-24 wow bounceInRight">Testimoni Siswa dan Alumni</h2>
-                    <p class="text-neutral-500 text-line-4 wow bounceInUp">Pengalaman yang Menginspirasi, Menjadi Bukti
-                        Keberhasilan Pendidikan yang Berkualitas.</p>
-                    <div class="flex-align gap-16 mt-40">
-                        <button type="button" id="testimonials-three-prev"
-                            class="slick-prev slick-arrow flex-center rounded-circle border border-gray-100 hover-border-main-600 text-xl hover-bg-main-600 hover-text-white transition-1 w-48 h-48"
-                            style="">
-                            <i class="ph ph-caret-left"></i>
-                        </button>
-                        <button type="button" id="testimonials-three-next"
-                            class="slick-next slick-arrow flex-center rounded-circle border border-gray-100 hover-border-main-600 text-xl hover-bg-main-600 hover-text-white transition-1 w-48 h-48"
-                            style="">
-                            <i class="ph ph-caret-right"></i>
-                        </button>
+                </div>
+
+                <!-- Single Item -->
+                <div class="col-lg-6">
+                    <div class="team-card style2">
+                        <div class="team-img-wrap">
+                            <svg class="team-shape" xmlns="http://www.w3.org/2000/svg" width="327" height="337"
+                                viewBox="0 0 327 337" fill="none">
+                                <path
+                                    d="M158.167 331C158.167 333.946 160.555 336.333 163.5 336.333C166.446 336.333 168.833 333.946 168.833 331C168.833 328.054 166.446 325.667 163.5 325.667C160.555 325.667 158.167 328.054 158.167 331ZM158.167 6C158.167 8.94552 160.555 11.3333 163.5 11.3333C166.446 11.3333 168.833 8.94552 168.833 6C168.833 3.05448 166.446 0.666667 163.5 0.666667C160.555 0.666667 158.167 3.05448 158.167 6ZM325 167.5C325 257.254 253.238 330 163.5 330V332C254.359 332 327 258.343 327 167.5H325ZM2.00012 167.5C2.00012 77.7618 73.7458 7 163.5 7V5C72.6574 5 0.00012207 76.6411 0.00012207 167.5H2.00012Z"
+                                    fill="#0D5EF4" />
+                            </svg>
+                            <div class="team-img">
+                                <img src="{{ asset('frontend') }}/img/team/team_2_3.jpg" alt="Team">
+                            </div>
+                            <div class="team-social">
+                                <a href="#" class="icon-btn">
+                                    <i class="far fa-plus"></i>
+                                </a>
+                                <div class="th-social">
+                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-title"><a href="team-details.html">Daniel Thomas</a></h3>
+                            <span class="team-desig">Junior Instructor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Item -->
+                <div class="col-lg-6">
+                    <div class="team-card style2">
+                        <div class="team-img-wrap">
+                            <svg class="team-shape" xmlns="http://www.w3.org/2000/svg" width="327" height="337"
+                                viewBox="0 0 327 337" fill="none">
+                                <path
+                                    d="M158.167 331C158.167 333.946 160.555 336.333 163.5 336.333C166.446 336.333 168.833 333.946 168.833 331C168.833 328.054 166.446 325.667 163.5 325.667C160.555 325.667 158.167 328.054 158.167 331ZM158.167 6C158.167 8.94552 160.555 11.3333 163.5 11.3333C166.446 11.3333 168.833 8.94552 168.833 6C168.833 3.05448 166.446 0.666667 163.5 0.666667C160.555 0.666667 158.167 3.05448 158.167 6ZM325 167.5C325 257.254 253.238 330 163.5 330V332C254.359 332 327 258.343 327 167.5H325ZM2.00012 167.5C2.00012 77.7618 73.7458 7 163.5 7V5C72.6574 5 0.00012207 76.6411 0.00012207 167.5H2.00012Z"
+                                    fill="#0D5EF4" />
+                            </svg>
+                            <div class="team-img">
+                                <img src="{{ asset('frontend') }}/img/team/team_2_4.jpg" alt="Team">
+                            </div>
+                            <div class="team-social">
+                                <a href="#" class="icon-btn">
+                                    <i class="far fa-plus"></i>
+                                </a>
+                                <div class="th-social">
+                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-title"><a href="team-details.html">Jennifer Patricia</a></h3>
+                            <span class="team-desig">Senior Instructor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Item -->
+                <div class="col-lg-6">
+                    <div class="team-card style2">
+                        <div class="team-img-wrap">
+                            <svg class="team-shape" xmlns="http://www.w3.org/2000/svg" width="327" height="337"
+                                viewBox="0 0 327 337" fill="none">
+                                <path
+                                    d="M158.167 331C158.167 333.946 160.555 336.333 163.5 336.333C166.446 336.333 168.833 333.946 168.833 331C168.833 328.054 166.446 325.667 163.5 325.667C160.555 325.667 158.167 328.054 158.167 331ZM158.167 6C158.167 8.94552 160.555 11.3333 163.5 11.3333C166.446 11.3333 168.833 8.94552 168.833 6C168.833 3.05448 166.446 0.666667 163.5 0.666667C160.555 0.666667 158.167 3.05448 158.167 6ZM325 167.5C325 257.254 253.238 330 163.5 330V332C254.359 332 327 258.343 327 167.5H325ZM2.00012 167.5C2.00012 77.7618 73.7458 7 163.5 7V5C72.6574 5 0.00012207 76.6411 0.00012207 167.5H2.00012Z"
+                                    fill="#0D5EF4" />
+                            </svg>
+                            <div class="team-img">
+                                <img src="{{ asset('frontend') }}/img/team/team_2_1.jpg" alt="Team">
+                            </div>
+                            <div class="team-social">
+                                <a href="#" class="icon-btn">
+                                    <i class="far fa-plus"></i>
+                                </a>
+                                <div class="th-social">
+                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-title"><a href="team-details.html">Hirmar Ubunti</a></h3>
+                            <span class="team-desig">Instructor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Item -->
+                <div class="col-lg-6">
+                    <div class="team-card style2">
+                        <div class="team-img-wrap">
+                            <svg class="team-shape" xmlns="http://www.w3.org/2000/svg" width="327" height="337"
+                                viewBox="0 0 327 337" fill="none">
+                                <path
+                                    d="M158.167 331C158.167 333.946 160.555 336.333 163.5 336.333C166.446 336.333 168.833 333.946 168.833 331C168.833 328.054 166.446 325.667 163.5 325.667C160.555 325.667 158.167 328.054 158.167 331ZM158.167 6C158.167 8.94552 160.555 11.3333 163.5 11.3333C166.446 11.3333 168.833 8.94552 168.833 6C168.833 3.05448 166.446 0.666667 163.5 0.666667C160.555 0.666667 158.167 3.05448 158.167 6ZM325 167.5C325 257.254 253.238 330 163.5 330V332C254.359 332 327 258.343 327 167.5H325ZM2.00012 167.5C2.00012 77.7618 73.7458 7 163.5 7V5C72.6574 5 0.00012207 76.6411 0.00012207 167.5H2.00012Z"
+                                    fill="#0D5EF4" />
+                            </svg>
+                            <div class="team-img">
+                                <img src="{{ asset('frontend') }}/img/team/team_2_2.jpg" alt="Team">
+                            </div>
+                            <div class="team-social">
+                                <a href="#" class="icon-btn">
+                                    <i class="far fa-plus"></i>
+                                </a>
+                                <div class="th-social">
+                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-title"><a href="team-details.html">Lily Michelle</a></h3>
+                            <span class="team-desig">Founder & CEO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Item -->
+                <div class="col-lg-6">
+                    <div class="team-card style2">
+                        <div class="team-img-wrap">
+                            <svg class="team-shape" xmlns="http://www.w3.org/2000/svg" width="327" height="337"
+                                viewBox="0 0 327 337" fill="none">
+                                <path
+                                    d="M158.167 331C158.167 333.946 160.555 336.333 163.5 336.333C166.446 336.333 168.833 333.946 168.833 331C168.833 328.054 166.446 325.667 163.5 325.667C160.555 325.667 158.167 328.054 158.167 331ZM158.167 6C158.167 8.94552 160.555 11.3333 163.5 11.3333C166.446 11.3333 168.833 8.94552 168.833 6C168.833 3.05448 166.446 0.666667 163.5 0.666667C160.555 0.666667 158.167 3.05448 158.167 6ZM325 167.5C325 257.254 253.238 330 163.5 330V332C254.359 332 327 258.343 327 167.5H325ZM2.00012 167.5C2.00012 77.7618 73.7458 7 163.5 7V5C72.6574 5 0.00012207 76.6411 0.00012207 167.5H2.00012Z"
+                                    fill="#0D5EF4" />
+                            </svg>
+                            <div class="team-img">
+                                <img src="{{ asset('frontend') }}/img/team/team_2_3.jpg" alt="Team">
+                            </div>
+                            <div class="team-social">
+                                <a href="#" class="icon-btn">
+                                    <i class="far fa-plus"></i>
+                                </a>
+                                <div class="th-social">
+                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-title"><a href="team-details.html">Daniel Thomas</a></h3>
+                            <span class="team-desig">Junior Instructor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Item -->
+                <div class="col-lg-6">
+                    <div class="team-card style2">
+                        <div class="team-img-wrap">
+                            <svg class="team-shape" xmlns="http://www.w3.org/2000/svg" width="327" height="337"
+                                viewBox="0 0 327 337" fill="none">
+                                <path
+                                    d="M158.167 331C158.167 333.946 160.555 336.333 163.5 336.333C166.446 336.333 168.833 333.946 168.833 331C168.833 328.054 166.446 325.667 163.5 325.667C160.555 325.667 158.167 328.054 158.167 331ZM158.167 6C158.167 8.94552 160.555 11.3333 163.5 11.3333C166.446 11.3333 168.833 8.94552 168.833 6C168.833 3.05448 166.446 0.666667 163.5 0.666667C160.555 0.666667 158.167 3.05448 158.167 6ZM325 167.5C325 257.254 253.238 330 163.5 330V332C254.359 332 327 258.343 327 167.5H325ZM2.00012 167.5C2.00012 77.7618 73.7458 7 163.5 7V5C72.6574 5 0.00012207 76.6411 0.00012207 167.5H2.00012Z"
+                                    fill="#0D5EF4" />
+                            </svg>
+                            <div class="team-img">
+                                <img src="{{ asset('frontend') }}/img/team/team_2_4.jpg" alt="Team">
+                            </div>
+                            <div class="team-social">
+                                <a href="#" class="icon-btn">
+                                    <i class="far fa-plus"></i>
+                                </a>
+                                <div class="th-social">
+                                    <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                    <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                    <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-title"><a href="team-details.html">Jennifer Patricia</a></h3>
+                            <span class="team-desig">Senior Instructor</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-area-3 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-30 mb-lg-0">
+                    <div class="cta-card" data-bg-src="{{ asset('frontend') }}/img/bg/cta-bg_3_1.png">
+                        <div class="title-area mb-40">
+                            <span class="sub-title text-white"><i class="fal fa-book me-2"></i>Popular Courses</span>
+                            <h4 class="sec-title text-white">Get The Best Courses & <br> Upgrade Your Skills </h4>
+                        </div>
+                        <a href="contact.html" class="th-btn style8">Join With Us<i
+                                class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="cta-card" data-bg-src="{{ asset('frontend') }}/img/bg/cta-bg_3_2.png">
+                        <div class="title-area mb-40">
+                            <span class="sub-title text-white"><i class="fal fa-book me-2"></i>Popular Courses</span>
+                            <h4 class="sec-title text-white">Engaging Courses for <br> Intellectual Exploration</h4>
+                        </div>
+                        <a href="contact.html" class="th-btn style8">Join With Us<i
+                                class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ===================================== Testimonials Section Three End ================================= -->
+    <!--==============================
+    Blog Area
+    ==============================-->
+    <section class="blog-area-5 overflow-hidden bg-smoke space-bottom">
+        <div class="container">
+            <div class="mb-35 text-center text-md-start">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md-8">
+                        <div class="title-area mb-md-0">
+                            <span class="sub-title"><i class="fal fa-book me-2"></i> Our News & Blogs</span>
+                            <h2 class="sec-title">Latests News & Blogs</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <a href="blog.html" class="th-btn">View All Posts<i class="fa-solid fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row slider-shadow th-carousel blog-slider-1" data-slide-show="3" data-lg-slide-show="2"
+                data-md-slide-show="2" data-sm-slide-show="1" data-arrows="true">
+                <div class="col-md-6 col-xl-4">
+                    <div class="th-blog blog-single style2">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="{{ asset('frontend') }}/img/blog/blog-1-1.jpg" alt="Blog Image"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a class="author" href="blog.html"><i class="fa-light fa-user"></i>by David Smith</a>
+                                <a href="blog.html"><i class="fa-light fa-clock"></i>05 Jun, 2023</a>
+                            </div>
+                            <h4 class="box-title"><a href="blog-details.html">Educate, Empower, Excel: Discover the Power
+                                    of Learning!</a>
+                            </h4>
+                            <a href="blog-details.html" class="link-btn">Read More Details<i
+                                    class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <div class="th-blog blog-single style2">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="{{ asset('frontend') }}/img/blog/blog-1-2.jpg" alt="Blog Image"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a class="author" href="blog.html"><i class="fa-light fa-user"></i>by David Smith</a>
+                                <a href="blog.html"><i class="fa-light fa-clock"></i>03 Jun, 2023</a>
+                            </div>
+                            <h4 class="box-title"><a href="blog-details.html">Enrich Your Mind, Envision Your Future:
+                                    Education for Success</a>
+                            </h4>
+                            <a href="blog-details.html" class="link-btn">Read More Details<i
+                                    class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <div class="th-blog blog-single style2">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="{{ asset('frontend') }}/img/blog/blog-1-3.jpg" alt="Blog Image"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a class="author" href="blog.html"><i class="fa-light fa-user"></i>by David Smith</a>
+                                <a href="blog.html"><i class="fa-light fa-clock"></i>10 Jul, 2023</a>
+                            </div>
+                            <h4 class="box-title"><a href="blog-details.html">University class starting soon while the
+                                    lovely valley team work</a>
+                            </h4>
+                            <a href="blog-details.html" class="link-btn">Read More Details<i
+                                    class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <div class="th-blog blog-single style2">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="{{ asset('frontend') }}/img/blog/blog-1-1.jpg" alt="Blog Image"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a class="author" href="blog.html"><i class="fa-light fa-user"></i>by David Smith</a>
+                                <a href="blog.html"><i class="fa-light fa-clock"></i>02 Apr, 2023</a>
+                            </div>
+                            <h4 class="box-title"><a href="blog-details.html">Educate, Empower, Excel: Discover the Power
+                                    of Learning!</a>
+                            </h4>
+                            <a href="blog-details.html" class="link-btn">Read More Details<i
+                                    class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <div class="th-blog blog-single style2">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="{{ asset('frontend') }}/img/blog/blog-1-2.jpg" alt="Blog Image"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a class="author" href="blog.html"><i class="fa-light fa-user"></i>by David Smith</a>
+                                <a href="blog.html"><i class="fa-light fa-clock"></i>03 Jun, 2023</a>
+                            </div>
+                            <h4 class="box-title"><a href="blog-details.html">Enrich Your Mind, Envision Your Future:
+                                    Education for Success</a>
+                            </h4>
+                            <a href="blog-details.html" class="link-btn">Read More Details<i
+                                    class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <div class="th-blog blog-single style2">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="{{ asset('frontend') }}/img/blog/blog-1-3.jpg" alt="Blog Image"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a class="author" href="blog.html"><i class="fa-light fa-user"></i>by David Smith</a>
+                                <a href="blog.html"><i class="fa-light fa-clock"></i>10 Jul, 2023</a>
+                            </div>
+                            <h4 class="box-title"><a href="blog-details.html">University class starting soon while the
+                                    lovely valley team work</a>
+                            </h4>
+                            <a href="blog-details.html" class="link-btn">Read More Details<i
+                                    class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--==============================
+    Cta Area
+    ==============================-->
+    <div class="cta-area-1" data-bg-src="{{ asset('frontend') }}/img/bg/cta-bg1.png">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-8">
+                    <div class="cta-wrap title-area mb-0">
+                        <div class="cta-icon">
+                            <img src="{{ asset('frontend') }}/img/normal/cta-icon1.png" alt="icon">
+                        </div>
+                        <div class="cta-content">
+                            <h2 class="cta-title sec-title">Get Online Courses</h2>
+                            <p class="cta-text">Met consectetur adipiscing sed eiustempore dolore</p>
+                        </div>
+                        <a href="about.html" class="th-btn style8">Join With Us<i
+                                class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cta-img-1" data-overlay="title" data-opacity="8">
+            <img src="{{ asset('frontend') }}/img/normal/cta_1_1.png" alt="Image">
+            <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn style2 popup-video"><i
+                    class="fa-sharp fa-solid fa-play"></i></a>
+        </div>
+    </div>
 @endsection

@@ -1,0 +1,42 @@
+.img-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center right;
+  }
+  .text-body {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    /* number of lines to show */
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.text-body-blogs {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    /* number of lines to show */
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.text-title-blogs {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.text-title-abouts {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

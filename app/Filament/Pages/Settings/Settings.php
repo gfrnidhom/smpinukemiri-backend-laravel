@@ -14,13 +14,13 @@ use Outerweb\FilamentSettings\Filament\Pages\Settings as BaseSettings;
 class Settings extends BaseSettings
 {
 
-    protected static ?string $navigationGroup = 'Profil Sekolah';
-    protected static ?int $navigationSort = 1;
-    protected static ?string $navigationLabel = 'Pengaturan Website';
+    protected static ?string $navigationGroup = 'Manajemen Website';
+    protected static ?int $navigationSort = 10;
+    protected static ?string $navigationLabel = 'Pengaturan';
 
     public static function getNavigationLabel(): string
     {
-        return 'Pengaturan Website';
+        return 'Pengaturan';
     }
 
     public function getTitle(): string
@@ -41,11 +41,22 @@ class Settings extends BaseSettings
                             RichEditor::make('site_tagline')
                                 ->label('Tagline')
                                 ->required(),
-                            TextInput::make('admin_email')
-                                ->label('Email Admin')
+                            RichEditor::make('description_sort')
+                                ->label('Deskripsi Singkat Sekolah')
                                 ->required(),
-                            FileUpload::make('site_logo')
+                            TextInput::make('admin_email')
+                                ->label('Email Administrator')
+                                ->required(),
+
+                            TextInput::make('site_copyright')
+                                ->label('Copyright')
+                                ->required(),
+                            FileUpload::make('first_site_logo')
                                 ->label('Logo Utama Website')
+                                ->directory('settings')
+                                ->required(),
+                            FileUpload::make('two_site_logo')
+                                ->label('Logo Kedua Website')
                                 ->directory('settings')
                                 ->required(),
                             ToggleButtons::make('maintenance_mode')
@@ -60,25 +71,9 @@ class Settings extends BaseSettings
                                     'active' => 'heroicon-o-pencil',
                                     'in_active' => 'heroicon-c-x-mark',
                                 ]),
+
                         ]),
 
-                    Tab::make('Header')
-                        ->schema([
-                            FileUpload::make('footer_logo')
-                                ->label('Logo')
-                                ->directory('settings.header')
-                                ->required(),
-                        ]),
-                    Tab::make('Footer')
-                        ->schema([
-                            TextInput::make('site_copyright')
-                                ->label('Copyright')
-                                ->required(),
-                            FileUpload::make('footer_logo')
-                                ->label('Logo')
-                                ->directory('settings.footer')
-                                ->required(),
-                        ])
                 ]),
         ];
     }

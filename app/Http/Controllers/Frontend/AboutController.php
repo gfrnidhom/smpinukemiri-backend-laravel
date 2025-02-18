@@ -16,7 +16,7 @@ class AboutController extends Controller
     {
         //
 
-        $title = 'Tentang Kami | SMPN 2 Purwosari';
+        $title = 'Tentang Kami | SMPN Islam Nurul Ulum';
 
         $programs = Program::all();
         $testimonials = Testimonial::all();
