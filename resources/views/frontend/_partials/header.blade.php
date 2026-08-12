@@ -89,8 +89,8 @@
     <!-- Nice Select -->
     <link rel="stylesheet" href="{{ asset('frontend') }}/css/nice-select.min.css">
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend') }}/css/style.css">
-    <link rel="stylesheet" href="{{ asset('frontend') }}/css/custom.css">
+    <link rel="stylesheet" href="{{ asset('frontend') }}/css/style.css?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('frontend') }}/css/custom.css?v={{ time() }}">
 
 </head>
 
