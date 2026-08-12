@@ -23,20 +23,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
-        if (!function_exists('cleanValue')) {
-            function cleanValue($value)
-            {
-                return stripslashes(trim($value, '"""'));
-            }
-        }
-
         View::composer('*', function ($view) {
 
             $defaultMeta = [
-                'title' => 'SMPN 2 Purwosari',
-                'description' => 'Mewadahi Bakat dan Minat Meraih Masa Depan',
-                'image' => asset('frontend/images/logo/logo-colour.png'),
+                'title' => 'SMP Islam Nurul Ulum Kemiri',
+                'description' => 'Memberikan yang Terbaik Bagi Siswa. Pendidikan berkualitas dan lingkungan positif.',
+                'image' => asset('frontend/img/logo_smp.png'),
                 'url' => url('/'),
             ];
 
@@ -49,39 +41,40 @@ class AppServiceProvider extends ServiceProvider
 
             $settings = Setting::pluck('value', 'key')->toArray();
 
-
             // Fungsi untuk membersihkan tanda petik dan backslash
-
+            $cleanValue = function ($value) {
+                return stripslashes(trim($value, '"""'));
+            };
 
             // Konversi ke dalam format yang lebih mudah digunakan
             $globalSettings = [
-                'first_logo'       => asset('storage' . '/' . cleanValue($settings['first_site_logo'] ?? '')),
-                'second_logo'      => asset('storage' . '/' . cleanValue($settings['two_site_logo'] ?? '')),
-                'site_name'        => cleanValue($settings['site_name'] ?? 'Nama Default'),
-                'site_tagline'     => cleanValue($settings['site_tagline'] ?? ''),
-                'vision'           => cleanValue($settings['vision'] ?? ''),
-                'mission'          => cleanValue($settings['mission'] ?? ''),
-                'school_history' => cleanValue($settings['school_history'] ?? ''),
-                'description_sort' => cleanValue($settings['description_sort'] ?? ''),
-                'admin_email'      => cleanValue($settings['admin_email'] ?? ''),
-                'site_copyright'   => cleanValue($settings['site_copyright'] ?? ''),
-                'maintenance_mode' => cleanValue($settings['maintenance_mode'] ?? 'inactive'),
-                'email'            => cleanValue($settings['email'] ?? ''),
-                'phone'            => cleanValue($settings['no_telp'] ?? ''),
-                'address'          => cleanValue($settings['address'] ?? ''),
-                'google_maps'      => cleanValue($settings['google_maps_link'] ?? ''),
-                'youtube'          => cleanValue($settings['youtube_url'] ?? ''),
-                'instagram'        => cleanValue($settings['instagram_url'] ?? ''),
-                'facebook'         => cleanValue($settings['facebook_url'] ?? ''),
-                'tiktok'           => cleanValue($settings['tiktok_url'] ?? ''),
-                'home_image'       => asset('storage' . '/' . cleanValue($settings['home_image'] ?? '')),
-                'school_image'     => asset('storage' . '/' . cleanValue($settings['school_image'] ?? '')),
-                'school_image2'    => asset('storage' . '/' . cleanValue($settings['school_image2'] ?? '')),
-                'school_image3'    => asset('storage' . '/' . cleanValue($settings['school_image3'] ?? '')),
-                'school_image4'    => asset('storage' . '/' . cleanValue($settings['school_image4'] ?? '')),
-                'school_image5'    => asset('storage' . '/' . cleanValue($settings['school_image5'] ?? '')),
-                'video_youtube1'   => cleanValue($settings['video_youtube1'] ?? ''),
-                'video_youtube2'   => cleanValue($settings['video_youtube2'] ?? ''),
+                'first_logo'       => asset('storage' . '/' . $cleanValue($settings['first_site_logo'] ?? '')),
+                'second_logo'      => asset('storage' . '/' . $cleanValue($settings['two_site_logo'] ?? '')),
+                'site_name'        => $cleanValue($settings['site_name'] ?? 'SMP Islam Nurul Ulum'),
+                'site_tagline'     => $cleanValue($settings['site_tagline'] ?? ''),
+                'vision'           => $cleanValue($settings['vision'] ?? ''),
+                'mission'          => $cleanValue($settings['mission'] ?? ''),
+                'school_history'   => $cleanValue($settings['school_history'] ?? ''),
+                'description_sort' => $cleanValue($settings['description_sort'] ?? ''),
+                'admin_email'      => $cleanValue($settings['admin_email'] ?? ''),
+                'site_copyright'   => $cleanValue($settings['site_copyright'] ?? ''),
+                'maintenance_mode' => $cleanValue($settings['maintenance_mode'] ?? 'inactive'),
+                'email'            => $cleanValue($settings['email'] ?? ''),
+                'phone'            => $cleanValue($settings['no_telp'] ?? ''),
+                'address'          => $cleanValue($settings['address'] ?? ''),
+                'google_maps'      => $cleanValue($settings['google_maps_link'] ?? ''),
+                'youtube'          => $cleanValue($settings['youtube_url'] ?? ''),
+                'instagram'        => $cleanValue($settings['instagram_url'] ?? ''),
+                'facebook'         => $cleanValue($settings['facebook_url'] ?? ''),
+                'tiktok'           => $cleanValue($settings['tiktok_url'] ?? ''),
+                'home_image'       => asset('storage' . '/' . $cleanValue($settings['home_image'] ?? '')),
+                'school_image'     => asset('storage' . '/' . $cleanValue($settings['school_image'] ?? '')),
+                'school_image2'    => asset('storage' . '/' . $cleanValue($settings['school_image2'] ?? '')),
+                'school_image3'    => asset('storage' . '/' . $cleanValue($settings['school_image3'] ?? '')),
+                'school_image4'    => asset('storage' . '/' . $cleanValue($settings['school_image4'] ?? '')),
+                'school_image5'    => asset('storage' . '/' . $cleanValue($settings['school_image5'] ?? '')),
+                'video_youtube1'   => $cleanValue($settings['video_youtube1'] ?? ''),
+                'video_youtube2'   => $cleanValue($settings['video_youtube2'] ?? ''),
             ];
 
             if (!isset($view->getData()['settings'])) {
