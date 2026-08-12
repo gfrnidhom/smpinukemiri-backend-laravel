@@ -84,7 +84,7 @@
                              <ul class="menu">
                                  <li><a href="{{ route('visionMission') }}">Visi dan Misi</a></li>
                                  <li><a href="{{ route('profileSchool') }}">Profil Sekolah</a></li>
-                                 <li><a href="{{ route('headmaster', $headmaster['name']) }}">Kepala Sekolah</a>
+                                 <li><a href="{{ route('headmaster', optional($headmaster)->name ?? '') }}">Kepala Sekolah</a>
                                  </li>
                                  <li><a href="{{ route('teacherandstaff') }}">Guru & Staff</a></li>
                              </ul>
