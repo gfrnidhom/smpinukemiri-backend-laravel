@@ -24,9 +24,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
-        function cleanValue($value)
-        {
-            return stripslashes(trim($value, '"""'));
+        if (!function_exists('cleanValue')) {
+            function cleanValue($value)
+            {
+                return stripslashes(trim($value, '"""'));
+            }
         }
 
         View::composer('*', function ($view) {
