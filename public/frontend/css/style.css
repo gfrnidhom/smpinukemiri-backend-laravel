@@ -68,8 +68,8 @@ Version: 1.0.0
 /*------------------- 1.2. Function -------------------*/
 /*------------------- 1.3. Variable-------------------*/
 :root {
-  --theme-color: #0D5EF4;
-  --theme-color2: #F20F10;
+  --theme-color: #036c37;
+  --theme-color2: #fda400;
   --title-color: #0F2239;
   --body-color: #4D5765;
   --smoke-color: #F3F7FB;
@@ -2123,7 +2123,7 @@ textarea.is-invalid {
   left: 50%;
   top: 50%;
   width: 600%;
-  background-color: var(--title-color);
+  background-color: var(--theme-color2);
   -webkit-transform: translateX(-50%) translateY(-50%) rotate(60deg);
       -ms-transform: translateX(-50%) translateY(-50%) rotate(60deg);
           transform: translateX(-50%) translateY(-50%) rotate(60deg);
@@ -8382,7 +8382,7 @@ ol.wp-block-rss {
 
 .copyright-wrap {
   padding: 16px 0;
-  background: #283752;
+  background: #fda400;
   --body-color: #B3C1D3;
 }
 
@@ -8949,7 +8949,7 @@ ol.wp-block-rss {
 .newsletter-form input {
   background-color: transparent;
   border-radius: 5px;
-  border: 1px solid #283752;
+  border: 1px solid #285236;
   margin-bottom: 0;
   height: 55px;
   color: var(--white-color);
@@ -9397,7 +9397,7 @@ ol.wp-block-rss {
 /* Footer 8 ---------------------------------- */
 .footer-layout8 {
   background-color: #0f1b31;
-  --body-color: #B3C1D3;
+  --body-color: #fff;
   overflow: hidden;
   /* Medium Large devices */
   /* Medium devices */
@@ -9414,7 +9414,7 @@ ol.wp-block-rss {
 }
 
 .footer-layout8 .footer-top {
-  border-bottom: 1px solid #254684;
+  border-bottom: 1px solid var(--theme-color2);
 }
 
 .footer-layout8 .widget-area {
@@ -9441,7 +9441,7 @@ ol.wp-block-rss {
 }
 
 .footer-layout8 .footer-contact-wrap .divider {
-  background-color: #254684;
+  background-color:var(--theme-color2);
   height: 100%;
   width: 1px;
 }
@@ -9475,8 +9475,8 @@ ol.wp-block-rss {
 .footer-layout8 .footer-contact .th-social a {
   --icon-size: 32px;
   font-size: 12px;
-  background-color: #193F85;
-  border: 1px solid #2A4F93;
+  background-color: var(--theme-color2);
+  border: 1px solid white;
 }
 
 @media (max-width: 1399px) {
@@ -9496,7 +9496,7 @@ ol.wp-block-rss {
     display: none;
   }
   .footer-layout8 .footer-contact:not(:last-child) {
-    border-bottom: 1px solid #254684;
+    border-bottom: 1px solid var(--theme-color2);
   }
   .footer-layout8 .widget-area {
     padding-top: 80px;
@@ -9517,7 +9517,7 @@ ol.wp-block-rss {
 
 .footer-layout9 .copyright-wrap {
   padding: 24px 0;
-  border-top: 1px solid #254684;
+  border-top: 1px solid var(--theme-color2);
 }
 
 .susbcribe-bg {
@@ -9646,7 +9646,7 @@ ol.wp-block-rss {
 }
 
 .breadcumb-wrapper {
-  background-color: var(--title-color);
+  background-color: var(--theme-color);
   padding: 155px 0;
   text-align: center;
   overflow: hidden;

@@ -10,10 +10,14 @@ class CreateAdministrationOfficer extends CreateRecord
 {
     protected static string $resource = AdministrationOfficerResource::class;
 
-    
+
 
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
+    }
+    public function getTitle(): string
+    {
+        return 'Tambah Pegawai Tata Usaha';
     }
 }

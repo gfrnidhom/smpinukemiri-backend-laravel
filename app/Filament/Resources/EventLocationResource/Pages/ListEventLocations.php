@@ -18,4 +18,9 @@ class ListEventLocations extends ListRecords
             ->icon('heroicon-o-plus'),
         ];
     }
+
+    public function getTitle(): string
+    {
+        return 'Lokasi Event';
+    }
 }

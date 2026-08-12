@@ -14,13 +14,18 @@ class EditAuthor extends EditRecord
     {
         return [
             Actions\DeleteAction::make()
-            ->label('Hapus Author')
-            ->icon('heroicon-o-trash'),
+                ->label('Hapus Author')
+                ->icon('heroicon-o-trash'),
         ];
     }
 
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
+    }
+
+    public function getTitle(): string
+    {
+        return 'Edit Penulis Konten';
     }
 }

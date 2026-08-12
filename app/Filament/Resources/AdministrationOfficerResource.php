@@ -24,10 +24,7 @@ class AdministrationOfficerResource extends Resource
     protected static ?int $navigationSort = 3;
     protected static ?string $navigationLabel = 'Pegawai Tata Usaha';
 
-    public function getTitle(): string
-    {
-        return 'Pegawai Tata Usaha';
-    }
+
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -108,24 +105,15 @@ class AdministrationOfficerResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Nama Lengkap')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('nip')
+                    ->label('NIP')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('position')
+                    ->label('Jabatan/Posisi')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('gender'),
-                Tables\Columns\TextColumn::make('birthplace')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('birthdate')
-                    ->date()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('employment_status')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('religion'),
-                Tables\Columns\TextColumn::make('qualification')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('specialization')
-                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

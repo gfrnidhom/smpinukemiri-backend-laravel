@@ -14,8 +14,13 @@ class ListAdministrationOfficers extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-            ->label('Tambah Tata Usaha')
-            ->icon('heroicon-o-plus'),
+                ->label('Tambah Tata Usaha')
+                ->icon('heroicon-o-plus'),
         ];
+    }
+
+    public function getTitle(): string
+    {
+        return 'Pegawai Tata Usaha';
     }
 }

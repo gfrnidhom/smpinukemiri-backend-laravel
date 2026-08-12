@@ -18,4 +18,9 @@ class ListUsers extends ListRecords
                 ->icon('heroicon-o-plus'),
         ];
     }
+
+    public function getTitle(): string
+    {
+        return 'Pengguna';
+    }
 }

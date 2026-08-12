@@ -16,4 +16,14 @@ class EditProgram extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+    public function getTitle(): string
+    {
+        return 'Edit Program';
+    }
 }

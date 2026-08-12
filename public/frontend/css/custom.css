@@ -1,42 +1,376 @@
+/* ========================================
+   Custom CSS - SMP Islam Nurul Ulum (Modernized)
+   ======================================== */
+
+/* ========================================
+   1. CSS VARIABLES (Design System)
+   ======================================== */
+:root {
+    /* Colors */
+    --primary-color: #036c37;
+    --primary-hover: #024d27;
+    --secondary-color: #f7a300;
+    --bg-light: #f9fbfd;
+    --text-main: #333333;
+    --text-muted: #6c757d;
+    --white: #ffffff;
+    
+    /* Shadows - Soft Modern UI */
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 20px 40px rgba(3, 108, 55, 0.1);
+    
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-pill: 50px;
+    
+    /* Transitions */
+    --transition-base: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Ensure container doesn't stretch 100% on large screens (Fixing theme overrides) */
+@media (min-width: 1400px) {
+    .container, .th-container, .th-container3, .th-container4 {
+        max-width: 1240px !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .container, .th-container, .th-container3, .th-container4 {
+        max-width: 1140px !important;
+    }
+}
+
+/* Header Menu Spacing Fix for narrower containers */
+.main-menu > ul > li {
+    margin: 0 10px !important;
+}
+.main-menu > ul > li > a {
+    font-size: 15px !important;
+}
+
+/* ========================================
+   2. GLOBAL TYPOGRAPHY (Fluid Scaling)
+   ======================================== */
+body {
+    font-family: 'Jost', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+}
+
+/* Fluid Headings */
+h1, .h1 { font-size: clamp(2rem, 4vw, 3.2rem) !important; font-weight: 700; line-height: 1.2; }
+h2, .h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem) !important; font-weight: 600; line-height: 1.3; }
+h3, .h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 600; line-height: 1.4; }
+h4, .h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 600; }
+h5, .h5 { font-size: clamp(1.1rem, 2vw, 1.25rem); font-weight: 600; }
+h6, .h6 { font-size: clamp(1rem, 1.5vw, 1.1rem); font-weight: 600; }
+
+.sec-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.sub-title {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem) !important;
+    font-weight: 600;
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Base text */
+p, .text-body, .service-card-text {
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* ========================================
+   3. MODERN UI COMPONENTS (Buttons & Cards)
+   ======================================== */
+   
+/* Modern Buttons */
+.th-btn, .btn {
+    border-radius: var(--radius-pill);
+    padding: 12px 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.th-btn:hover, .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Modern Cards */
+.th-blog, .team-card, .service-card, .event-card, .event-content, .cta-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: none !important;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+    overflow: hidden;
+}
+
+.th-blog:hover, .team-card:hover, .service-card:hover, .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Inputs & Forms */
+.form-control, .common-input {
+    border-radius: var(--radius-sm);
+    border: 1px solid #e5e5e5;
+    padding: 14px 20px;
+    transition: var(--transition-base);
+}
+
+.form-control:focus, .common-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(3, 108, 55, 0.1);
+    outline: none;
+}
+
+/* ========================================
+   4. TEXT TRUNCATION UTILITIES
+   ======================================== */
+.text-body {
+    overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; line-clamp: 5; -webkit-box-orient: vertical;
+}
+.text-body-blogs {
+    overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; line-clamp: 4; -webkit-box-orient: vertical;
+}
+.text-title-blogs {
+    overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical;
+}
+.text-title-abouts {
+    overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical;
+}
+
+/* ========================================
+   5. LAYOUT & RESPONSIVE FIXES
+   ======================================== */
+
+/* Thumbnail Avatars */
 .img-thumbnail {
-    width: 50px;
-    height: 50px;
+    width: 50px; height: 50px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center right;
-  }
-  .text-body {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    /* number of lines to show */
-    line-clamp: 5;
-    -webkit-box-orient: vertical;
 }
 
-.text-body-blogs {
+/* Hero Section */
+.th-hero-wrapper.hero-14 {
+    position: relative;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    /* number of lines to show */
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
+}
+.hero-style14 {
+    max-width: 550px;
+}
+/* Fluid Hero Text */
+.hero-style14 .hero-title {
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+.hero-style14 .hero-text {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    margin-bottom: 30px;
+}
+.hero-style14 .hero-name {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
-.text-title-blogs {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    /* number of lines to show */
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
+/* Blog & Event Responsive Images */
+.blog-img-responsive {
+    width: 100%; height: 0; padding-bottom: 60%;
+    position: relative; overflow: hidden;
+}
+.blog-img-responsive img {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+}
+.th-blog.blog-single .blog-img img {
+    width: 100%; height: 250px; object-fit: cover;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 
-.text-title-abouts {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    /* number of lines to show */
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
+/* Feature Cards Equal Height */
+.feature-list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.feature-list_text {
+    flex-grow: 1;
+}
+
+/* Teacher & Staff Cards */
+.team-card.style3 .team-img-wrap .team-img {
+    height: 320px; overflow: hidden;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+.team-card.style3 .team-img-wrap .team-img img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+}
+
+/* Headmaster & About Responsive Image */
+.team-details-thumb img, .course-single .course-img img, .img-box11 .img1 img {
+    width: 100%; max-width: 100%; height: auto;
+    max-height: 450px; object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+/* Footer Fixes */
+.footer-contact-wrap {
+    display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;
+}
+.custom-footer {
+    background-color: var(--primary-color) !important;
+    color: rgba(255, 255, 255, 0.8);
+}
+.custom-footer .footer-top {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+.custom-footer .widget_title, 
+.custom-footer .footer-text, 
+.custom-footer .footer-contact_text, 
+.custom-footer .footer-contact_link {
+    color: var(--white) !important;
+}
+.custom-footer .footer-contact_icon::before,
+.custom-footer .footer-contact_icon::after {
+    display: none !important;
+}
+.custom-footer .footer-contact_icon {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: var(--white) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custom-footer .th-social a {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: var(--white) !important;
+    border: none !important;
+    transition: var(--transition-base);
+}
+.custom-footer .th-social a:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+.custom-footer .newsletter-form input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+.custom-footer .newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+.custom-footer .newsletter-form i {
+    color: rgba(255, 255, 255, 0.7);
+}
+.custom-footer .th-btn.style3 {
+    background-color: var(--secondary-color);
+    color: var(--text-main);
+}
+.custom-footer .th-btn.style3:hover {
+    background-color: var(--white);
+}
+
+/* Desktop Image Toggle */
+.image-mobile { display: none !important; }
+.image-desktop { display: block !important; }
+
+/* ========================================
+   6. MEDIA QUERIES (Responsive Breakpoints)
+   ======================================== */
+
+/* --- Tablet Landscape (max 1200px) --- */
+@media (max-width: 1199.98px) {
+    /* Adjustments if needed */
+}
+
+/* --- Tablet Portrait (max 991px) --- */
+@media (max-width: 991.98px) {
+    /* Hero Section */
+    .th-hero-wrapper.hero-14 {
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+    .hero-style14 {
+        max-width: 100%;
+        text-align: center;
+        padding-top: 0 !important;
+    }
+    .hero-style14 .btn-group {
+        justify-content: center;
+    }
+
+    /* Images */
+    .image-desktop { display: none !important; }
+    .image-mobile { display: block !important; }
+
+    /* Footer */
+    .footer-contact-wrap {
+        flex-direction: column; align-items: center; text-align: center;
+    }
+    .footer-contact-wrap .divider { display: none; }
+    
+    /* Layout */
+    .counter-card-wrap { margin-bottom: 15px; }
+    .team-details-thumb img, .img-box11 .img1 img { max-height: 350px; }
+    .video-box2 img { width: 100%; height: auto; }
+}
+
+/* --- Mobile (max 767px) --- */
+@media (max-width: 767.98px) {
+    /* Cards */
+    .th-blog.blog-single .blog-img img { height: 220px; }
+    .team-card.style3 .team-img-wrap .team-img { height: 280px; }
+    
+    /* Breadcrumb */
+    .breadcumb-menu { flex-wrap: wrap; justify-content: center; }
+    
+    /* Text alignment */
+    .copyright-text, .footer-links { text-align: center; }
+    
+    /* Grids */
+    .event-grid { flex-direction: column; }
+    .event-grid .event-img, .event-grid .event-content { width: 100%; }
+    .event-content .media-body { margin-top: 15px; }
+    
+    /* Maps & Spacing */
+    .map-sec .map iframe { height: 250px; }
+    .feature-list { padding: 20px 15px; }
+}
+
+/* --- Small Mobile (max 480px) --- */
+@media (max-width: 479.98px) {
+    /* Buttons & Text */
+    .th-btn { padding: 12px 24px; font-size: 0.9rem; }
+    .counter-card_number { font-size: clamp(1.5rem, 4vw, 2rem); }
 }

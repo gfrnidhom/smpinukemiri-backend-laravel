@@ -14,13 +14,18 @@ class EditComment extends EditRecord
     {
         return [
             Actions\DeleteAction::make()
-            ->label('Hapus Komentar')
-            ->icon('heroicon-o-trash'),
+                ->label('Hapus Komentar')
+                ->icon('heroicon-o-trash'),
         ];
     }
 
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
+    }
+
+    public function getTitle(): string
+    {
+        return 'Edit Komentar';
     }
 }

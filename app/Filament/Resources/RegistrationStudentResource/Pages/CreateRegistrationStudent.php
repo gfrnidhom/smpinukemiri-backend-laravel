@@ -14,4 +14,9 @@ class CreateRegistrationStudent extends CreateRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    public function getTitle(): string
+    {
+        return 'Tambah Penerimaan Siswa Baru';
+    }
 }

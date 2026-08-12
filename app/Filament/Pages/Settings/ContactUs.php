@@ -59,6 +59,12 @@ class ContactUs extends BaseSettings
                             TextInput::make('tiktok_url')
                                 ->label('Media Sosial Tiktok')
                                 ->required(),
+                            TextInput::make('video_youtube1')
+                                ->label('Video Youtube 1')
+                                ->required(),
+                            TextInput::make('video_youtube2')
+                                ->label('Video Youtube 2')
+                                ->required(),
 
                         ]),
                 ]),

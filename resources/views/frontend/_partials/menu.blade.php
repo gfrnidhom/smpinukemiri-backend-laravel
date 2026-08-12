@@ -10,7 +10,7 @@
                      <div class="col-auto">
                          <div class="header-logo">
                              <a href="{{ route('home-dashboard') }}"><img src="{{ $settings['first_logo'] }}"
-                                     width="270px" alt="SMP Islam Nurul Ulum"></a>
+                                     width="220px" alt="SMP Islam Nurul Ulum"></a>
                          </div>
                      </div>
                      <div class="col-auto">
@@ -22,61 +22,65 @@
                                  <li class="menu-item-has-children">
                                      <a href="#">Profil Kami</a>
                                      <ul class="sub-menu">
-                                         <li><a href="course.html">Visi dan Misi</a></li>
-                                         <li><a href="course-2.html">Sejarah Sekolah</a></li>
-                                         <li><a href="course-3.html">Kepala Sekolah</a></li>
-                                         <li><a href="course-details.html">Guru & Staff</a></li>
-                                     </ul>
-                                 </li>
-                                 <li class="menu-item-has-children">
-                                     <a href="#">Teachers</a>
-                                     <ul class="sub-menu">
-                                         <li><a href="team.html">Instructors</a></li>
-                                         <li><a href="team-details.html">Instructors Details</a></li>
-                                     </ul>
-                                 </li>
-                                 <li class="menu-item-has-children">
-                                     <a href="#">Pages</a>
-                                     <ul class="sub-menu">
-                                         <li><a href="about.html">About Us</a></li>
-                                         <li class="menu-item-has-children">
-                                             <a href="#">Shop</a>
-                                             <ul class="sub-menu">
-                                                 <li><a href="shop.html">Shop</a></li>
-                                                 <li><a href="shop-details.html">Shop Details</a></li>
-                                                 <li><a href="cart.html">Cart Page</a></li>
-                                                 <li><a href="checkout.html">Checkout</a></li>
-                                                 <li><a href="wishlist.html">Wishlist</a></li>
-                                             </ul>
+                                         <li><a href="{{ route('visionMission') }}">Visi dan Misi</a></li>
+                                         <li><a href="{{ route('profileSchool') }}">Profil Sekolah</a></li>
+                                         <li><a href="{{ route('headmaster', $headmaster['name']) }}">Kepala Sekolah</a>
                                          </li>
-                                         <li><a href="event.html">Events</a></li>
-                                         <li><a href="event-details.html">Event Details</a></li>
-                                         <li><a href="gallery.html">Gallery</a></li>
-                                         <li><a href="error.html">Error Page</a></li>
+                                         <li><a href="{{ route('teacherandstaff') }}">Guru & Staff</a></li>
                                      </ul>
                                  </li>
 
+
                                  <li>
-                                     <a href="{{ route('about-us') }}">Event</a>
+                                     <a href="{{ route('events') }}">Event</a>
                                  </li>
                                  <li>
-                                     <a href="{{ route('about-us') }}">Berita</a>
+                                     <a href="{{ route('blogs') }}">Berita</a>
                                  </li>
                                  <li>
-                                     <a href="{{ route('about-us') }}">Kontak Kami</a>
+                                     <a href="{{ route('contact-us') }}">Kontak Kami</a>
+                                 </li>
+                                 <li>
+                                     <a href="{{ route('ppdb') }}">PPDB {{ date('Y') }}</a>
                                  </li>
                              </ul>
                          </nav>
                          <button type="button" class="th-menu-toggle d-block d-lg-none"><i
                                  class="far fa-bars"></i></button>
                      </div>
-                     <div class="col-auto d-none d-xl-block">
-                         <div class="header-button">
 
-
-                             <a href="contact.html" class="th-btn ml-25">Masuk/Daftar</a>
+                     @guest
+                         <div class="col-auto d-none d-xl-block">
+                             <div class="header-button">
+                                 <a href="{{ route('login') }}" class="th-btn ml-25">Masuk/Daftar</a>
+                             </div>
                          </div>
-                     </div>
+                     @endguest
+
+                     @auth
+                         <div class="col-auto d-none d-xl-block">
+                             <div class="header-button">
+                                 <div class="category-menu-wrap mr-5">
+                                     <a class="menu-expand" href="#"><i
+                                             class="fa-solid fa-user me-2 text-theme"></i>{{ ' ' . Auth::user()->name . ' ' }}
+                                         &nbsp; <i class="fa-solid fa-angle-down ms-auto"></i></a>
+                                     <nav class="category-menu">
+                                         <ul>
+                                             {{-- <li><a href="course">Profile</a></li> --}}
+                                             <li><a href="{{ route('ppdb.showRegistrationResult') }}">Riwayat
+                                                     Pendaftaran</a></li>
+                                             <li><a href="{{ route('logout') }}">Logout</a></li>
+
+                                         </ul>
+                                     </nav>
+
+                                 </div>
+
+                             </div>
+                         </div>
+                     @endauth
+
+
                  </div>
              </div>
          </div>

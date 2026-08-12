@@ -5,12 +5,17 @@ namespace App\Providers\Filament;
 use App\Filament\Pages\Settings\AboutUs;
 use App\Filament\Pages\Settings\ContactUs;
 use App\Filament\Pages\Settings\Settings;
+use App\Filament\Resources\EnrollmentPeriodResource\Widgets\EnrollmentStatsWidget;
+use App\Filament\Resources\RegistrationStudentResource\Widgets\RegistrationStudentStatsWidget;
+use App\Filament\Widgets\DashboardStatsWidget;
+use App\Models\EnrollmentPeriod;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Navigation\NavigationGroup;
 use Filament\Pages;
+use Filament\Pages\Auth\EditProfile;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -37,15 +42,19 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Blue,
             ])
+            ->databaseNotifications()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Pages\Dashboard::class,
+
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 // Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,
+                DashboardStatsWidget::class,
+                // RegistrationStudentStatsWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,

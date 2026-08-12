@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EnrollmentPeriodResource\Pages;
 use App\Filament\Resources\EnrollmentPeriodResource\RelationManagers;
+use App\Filament\Resources\EnrollmentPeriodResource\Widgets\EnrollmentStatsWidget;
 use App\Models\EnrollmentPeriod;
 use Filament\Forms;
 use Filament\Forms\Components\Section;
@@ -70,20 +71,26 @@ class EnrollmentPeriodResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('period_name')
+                    ->label('Gelombang PPDB')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('start_date')
+                    ->label('Tanggal Mulai')
                     ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('end_date')
+                    ->label('Tanggal Berakhir')
                     ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('quota')
+                    ->label('Kuota')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('applicants_count')
+                    ->label('Jumlah Pendaftar')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\TextColumn::make('status')
+                    ->label('Status'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -110,6 +117,13 @@ class EnrollmentPeriodResource extends Resource
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            EnrollmentStatsWidget::class,
         ];
     }
 

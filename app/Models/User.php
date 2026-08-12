@@ -10,15 +10,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
-
-    // public function canAccessPanel(Panel $panel): bool
-    // {
-    //     return str_ends_with($this->email, 'smp.pelem@smpn2purwosaribjn.sch.id');
-
-    //     return true;
-    // }
+    public function canAccessPanel(\Filament\Panel $panel): bool
+    {
+        return $this->role === 'admin'; // Hanya user dengan role admin yang bisa masuk
+    }
 
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -57,5 +54,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function registration_students()
+    {
+        return $this->belongsTo(RegistrationStudent::class);
     }
 }

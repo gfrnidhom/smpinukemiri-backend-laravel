@@ -14,4 +14,9 @@ class CreateSchoolHeadmaster extends CreateRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    public function getTitle(): string
+    {
+        return 'Tambah Kepala Sekolah';
+    }
 }

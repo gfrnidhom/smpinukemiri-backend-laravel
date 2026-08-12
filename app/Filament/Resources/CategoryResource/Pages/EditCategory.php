@@ -14,12 +14,16 @@ class EditCategory extends EditRecord
     {
         return [
             Actions\DeleteAction::make()
-            ->label('Hapus Kategori')
-            ->icon('heroicon-o-trash'),
+                ->label('Hapus Kategori')
+                ->icon('heroicon-o-trash'),
         ];
     }
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
+    }
+    public function getTitle(): string
+    {
+        return 'Edit Kategori Postingan';
     }
 }

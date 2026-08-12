@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('registration_students', function (Blueprint $table) {
             $table->id();
+            $table->string('registration_number')->unique();
             $table->foreignId('user_id')->unique()->constrained('users')->onDelete('cascade');
             $table->foreignId('enrollment_period_id')->constrained('enrollment_periods')->onDelete('cascade');
             $table->string('full_name');
@@ -22,19 +23,17 @@ return new class extends Migration
             $table->date('birthdate');
             $table->enum('gender', ['Male', 'Female']);
             $table->enum('religion', ['Islam', 'Christian', 'Catholic', 'Hindu', 'Buddhist', 'Confucianism']);
-            $table->unsignedBigInteger('province_id')->nullable();
-            $table->unsignedBigInteger('city_id')->nullable();
-            $table->unsignedBigInteger('district_id')->nullable();
-            $table->unsignedBigInteger('subdistrict_id')->nullable();
-            $table->unsignedBigInteger('postal_code')->nullable();
-            $table->text('address');
             $table->string('phone_number');
             $table->string('email')->nullable();
-            $table->string('previous_school');
-            $table->string('accepted_class')->nullable();
-            $table->string('guardian_relationship')->nullable();
+            $table->enum('previous_school', ['sd', 'mi']);
+            $table->string('previous_school_name');
             $table->timestamp('registration_date')->useCurrent();
-            $table->text('additional_notes')->nullable();
+            $table->string('province_code', 2)->nullable();
+            $table->string('city_code', 4)->nullable();
+            $table->string('district_code', 6)->nullable();
+            $table->string('village_code', 10)->nullable();
+            $table->string('postal_code')->nullable();
+            $table->text('address');
             $table->enum('registration_status', ['Pending', 'Accepted', 'Rejected'])->default('Pending');
             $table->timestamps();
         });

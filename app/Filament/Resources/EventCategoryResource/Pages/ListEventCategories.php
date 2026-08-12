@@ -14,8 +14,13 @@ class ListEventCategories extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-            ->label('Tambah Kategori Event')
-            ->icon('heroicon-o-plus'),
+                ->label('Tambah Kategori Event')
+                ->icon('heroicon-o-plus'),
         ];
+    }
+
+    public function getTitle(): string
+    {
+        return 'Kategori Event';
     }
 }

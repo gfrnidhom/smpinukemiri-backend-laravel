@@ -14,9 +14,9 @@ use Filament\Forms\Components\ToggleButtons;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\ViewAction as ActionsViewAction;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+
 
 class TeacherResource extends Resource
 {
@@ -103,6 +103,9 @@ class TeacherResource extends Resource
                     Forms\Components\FileUpload::make('image')
                         ->image()
                         ->directory('teacher')
+                        ->imageEditor()
+                        ->imageEditorViewportWidth('512')
+                        ->imageEditorViewportHeight('512')
                         ->columnSpanFull(),
                     ToggleButtons::make('status')
                         ->required()
@@ -126,31 +129,31 @@ class TeacherResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('first_name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('last_name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
+                Tables\Columns\ImageColumn::make('image')
+                    ->circular()
+                    ->label('Gambar'),
+                Tables\Columns\TextColumn::make('full_name')
+                    ->label('Nama Lengkap')
+                    ->getStateUsing(fn($record) => "{$record->first_name} {$record->last_name} {$record->title}")
+                    ->searchable(query: function ($query, $search) {
+                        return $query->where(function ($q) use ($search) {
+                            $q->where('first_name', 'like', "%{$search}%")
+                                ->orWhere('last_name', 'like', "%{$search}%")
+                                ->orWhere('title', 'like', "%{$search}%");
+                        });
+                    }),
                 Tables\Columns\TextColumn::make('nip')
+                    ->label('NIP')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
+                    ->label('Email')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('date_of_birth')
-                    ->date()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('gender'),
-                Tables\Columns\TextColumn::make('qualification')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('specialization')
+                    ->label('Mata Pelajaran')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('hire_date')
-                    ->date()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('status'),
-                Tables\Columns\ImageColumn::make('image'),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -165,6 +168,8 @@ class TeacherResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

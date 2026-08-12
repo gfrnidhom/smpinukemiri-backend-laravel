@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
+use App\Filament\Resources\PostResource\Widgets\PostStatsWidget;
 use Filament\Actions;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
@@ -19,6 +20,19 @@ class ListPosts extends ListRecords
                 ->label('Tambah Postingan')
                 ->icon('heroicon-o-plus'),
 
+        ];
+    }
+
+    public function getTitle(): string
+    {
+        return 'Postingan';
+    }
+
+    //Widget
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            PostStatsWidget::class
         ];
     }
 }

@@ -18,4 +18,9 @@ class ListSchoolHeadmasters extends ListRecords
             ->icon('heroicon-o-plus'),
         ];
     }
+
+    public function getTitle(): string
+    {
+        return 'Kepala Sekolah';
+    }
 }

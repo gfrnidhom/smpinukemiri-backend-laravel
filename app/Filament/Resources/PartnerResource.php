@@ -60,7 +60,7 @@ class PartnerResource extends Resource
             ->columns([
 
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Nama Mitra')
+                    ->label('Gambar Mitra')
                     ->circular(),
                 Tables\Columns\TextColumn::make('partner_name')
                     ->label('Nama Mitra')
@@ -82,7 +82,8 @@ class PartnerResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                DeleteAction::make()
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

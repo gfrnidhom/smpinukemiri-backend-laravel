@@ -48,6 +48,22 @@ class AboutUs extends BaseSettings
                                 ->label('Gambar Sekolah')
                                 ->directory('settings')
                                 ->required(),
+                            FileUpload::make('school_image2')
+                                ->label('Gambar Sekolah')
+                                ->directory('settings')
+                                ->required(),
+                            FileUpload::make('school_image3')
+                                ->label('Gambar Sekolah')
+                                ->directory('settings')
+                                ->required(),
+                            FileUpload::make('school_image4')
+                                ->label('Gambar Sekolah')
+                                ->directory('settings')
+                                ->required(),
+                            FileUpload::make('school_image5')
+                                ->label('Gambar Sekolah')
+                                ->directory('settings')
+                                ->required(),
 
                         ]),
                 ]),

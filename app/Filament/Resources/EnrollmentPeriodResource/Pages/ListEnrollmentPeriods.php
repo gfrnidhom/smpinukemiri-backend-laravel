@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\EnrollmentPeriodResource\Pages;
 
 use App\Filament\Resources\EnrollmentPeriodResource;
+use App\Filament\Resources\EnrollmentPeriodResource\Widgets\EnrollmentStatsWidget;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
@@ -19,5 +20,15 @@ class ListEnrollmentPeriods extends ListRecords
         ];
     }
 
+    public function getTitle(): string
+    {
+        return 'Gelombang Pendaftaran';
+    }
 
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            EnrollmentStatsWidget::class,
+        ];
+    }
 }

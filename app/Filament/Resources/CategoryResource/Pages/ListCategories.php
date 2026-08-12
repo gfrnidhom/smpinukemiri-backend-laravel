@@ -14,8 +14,13 @@ class ListCategories extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-            ->label('Tambah Kategori')
-            ->icon('heroicon-o-plus'),
+                ->label('Tambah Kategori')
+                ->icon('heroicon-o-plus'),
         ];
+    }
+
+    public function getTitle(): string
+    {
+        return 'Kategori Postingan';
     }
 }

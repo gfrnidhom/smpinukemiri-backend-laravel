@@ -22,7 +22,7 @@ class BlogController extends Controller
         $categories = Category::all();
 
 
-        $blogs = Post::where('status', 'published')->get();
+        $blogs = Post::where('status', 'published')->latest()->paginate(9);
         return view('frontend.blogs.blog-view', compact([
             'title',
             'blogs',

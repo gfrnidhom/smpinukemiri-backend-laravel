@@ -18,4 +18,9 @@ class ListEvents extends ListRecords
                 ->icon('heroicon-o-plus'),
         ];
     }
+
+    public function getTitle(): string
+    {
+        return 'Event';
+    }
 }

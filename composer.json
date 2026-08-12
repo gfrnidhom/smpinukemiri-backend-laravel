@@ -7,15 +7,20 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "barryvdh/laravel-dompdf": "^3.1",
         "blendbyte/filament-title-with-slug": "^1.0",
+        "filament/actions": "^3.2",
         "filament/filament": "^3.2",
         "filament/spatie-laravel-settings-plugin": "^3.2",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
+        "laravolt/indonesia": "^0.35.0",
         "outerweb/filament-settings": "^1.2",
         "outerweb/settings": "^1.0",
         "owenvoke/blade-fontawesome": "^2.8",
+        "pxlrbt/filament-excel": "^2.4",
         "realrashid/sweet-alert": "^7.2",
+        "spatie/laravel-pdf": "^1.5",
         "teguh02/indonesia-territory-forms": "^1.1"
     },
     "require-dev": {

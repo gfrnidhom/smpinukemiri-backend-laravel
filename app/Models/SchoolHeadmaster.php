@@ -22,7 +22,6 @@ class SchoolHeadmaster extends Model
         'specialization',
         'address',
         'remarks',
-        'start_date',
-        'end_date'
+        'image'
     ];
 }

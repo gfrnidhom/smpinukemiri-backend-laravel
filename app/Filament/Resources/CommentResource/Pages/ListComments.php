@@ -14,8 +14,12 @@ class ListComments extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-            ->label('Tambah Komentar')
-            ->icon('heroicon-o-plus'),
+                ->label('Tambah Komentar')
+                ->icon('heroicon-o-plus'),
         ];
+    }
+    public function getTitle(): string
+    {
+        return 'Komentar';
     }
 }

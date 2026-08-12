@@ -14,8 +14,13 @@ class ListAuthors extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-            ->label('Tambah Author')
-            ->icon('heroicon-o-plus'),
+                ->label('Tambah Author')
+                ->icon('heroicon-o-plus'),
         ];
+    }
+
+    public function getTitle(): string
+    {
+        return 'Penulis Konten';
     }
 }

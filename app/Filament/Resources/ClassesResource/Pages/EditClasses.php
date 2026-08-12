@@ -21,4 +21,9 @@ class EditClasses extends EditRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    public function getTitle(): string
+    {
+        return 'Edit Kelas';
+    }
 }

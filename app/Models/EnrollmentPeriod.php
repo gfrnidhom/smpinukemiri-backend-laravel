@@ -17,5 +17,9 @@ class EnrollmentPeriod extends Model
         'status',
         'image',
     ];
-}
 
+    public function registration_students()
+    {
+        return $this->belongsTo(RegistrationStudent::class);
+    }
+}

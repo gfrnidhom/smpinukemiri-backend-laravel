@@ -1,7 +1,7 @@
  <!--==============================
  Footer Area
 ==============================-->
- <footer class="footer-wrapper footer-layout8" data-bg-src="{{ asset('frontend') }}/img/update1/bg/footer_bg_3.jpg">
+ <footer class="footer-wrapper footer-layout8 custom-footer">
      <div class="footer-top">
          <div class="container">
              <div class="footer-contact-wrap">
@@ -53,13 +53,13 @@
                              <a href="{{ route('home-dashboard') }}"><img src="{{ $settings['second_logo'] }}"
                                      width="270px" alt="SMP Islam Nurul Ulum"></a>
                          </div>
-                         <p class="footer-text">Subscribe our newsletter to get our latest
-                             Update & news</p>
+                         <p class="footer-text">Berlangganan newsletter kami untuk mendapatkan
+                            informasi & berita terbaru</p>
                          <form class="newsletter-form form-group">
-                             <input class="form-control" type="email" placeholder="Email Email" required="">
+                             <input class="form-control" type="email" placeholder="Email" required="">
                              <i class="far fa-envelope"></i>
-                             <button type="submit" class="th-btn style3">Subscribe Now <i
-                                     class="far fa-arrow-right ms-1"></i></button>
+                             <button type="submit" class="th-btn style3">Berlangganan <i
+                                    class="far fa-arrow-right ms-1"></i></button>
                          </form>
                      </div>
                  </div>
@@ -68,11 +68,11 @@
                          <h3 class="widget_title">Kategori</h3>
                          <div class="menu-all-pages-container">
                              <ul class="menu">
-                                 <li><a href="about.html">About Us</a></li>
-                                 <li><a href="course.html">Resource Center</a></li>
-                                 <li><a href="course.html">Careers</a></li>
-                                 <li><a href="team.html">Instructor</a></li>
-                                 <li><a href="contact.html">Become A Teacher</a></li>
+
+                                 @foreach ($categories as $item)
+                                     <li><a href="{{ route('blogs') }}">{{ $item['name'] }}</a></li>
+                                 @endforeach
+
                              </ul>
                          </div>
                      </div>
@@ -82,53 +82,16 @@
                          <h3 class="widget_title">Profil Kami</h3>
                          <div class="menu-all-pages-container">
                              <ul class="menu">
-                                 <li><a href="course.html">Visi dan Misi</a></li>
-                                 <li><a href="course-2.html">Sejarah Sekolah</a></li>
-                                 <li><a href="course-3.html">Kepala Sekolah</a></li>
-                                 <li><a href="course-details.html">Guru & Staff</a></li>
+                                 <li><a href="{{ route('visionMission') }}">Visi dan Misi</a></li>
+                                 <li><a href="{{ route('profileSchool') }}">Profil Sekolah</a></li>
+                                 <li><a href="{{ route('headmaster', $headmaster['name']) }}">Kepala Sekolah</a>
+                                 </li>
+                                 <li><a href="{{ route('teacherandstaff') }}">Guru & Staff</a></li>
                              </ul>
                          </div>
                      </div>
                  </div>
-                 <div class="col-md-6 col-xl-auto">
-                     <div class="widget footer-widget style2">
-                         <h3 class="widget_title">RECENT GALLERY</h3>
-                         <div class="sidebar-gallery">
-                             <div class="gallery-thumb">
-                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-1.jpg" alt="Gallery Image">
-                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-1.jpg"
-                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
-                             </div>
-                             <div class="gallery-thumb">
-                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-2.jpg" alt="Gallery Image">
-                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-2.jpg"
-                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
-                             </div>
-                             <div class="gallery-thumb">
-                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-3.jpg" alt="Gallery Image">
-                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-3.jpg"
-                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
-                             </div>
-                             <div class="gallery-thumb">
-                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-4.jpg" alt="Gallery Image">
-                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-4.jpg"
-                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
-                             </div>
-                             <div class="gallery-thumb">
-                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-5.jpg"
-                                     alt="Gallery Image">
-                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-5.jpg"
-                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
-                             </div>
-                             <div class="gallery-thumb">
-                                 <img src="{{ asset('frontend') }}/img/update1/widget/gal-1-6.jpg"
-                                     alt="Gallery Image">
-                                 <a href="{{ asset('frontend') }}/img/update1/widget/gal-1-6.jpg"
-                                     class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+
              </div>
          </div>
      </div>
@@ -136,14 +99,15 @@
          <div class="container">
              <div class="row justify-content-between align-items-center">
                  <div class="col-lg-6">
-                     <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2023 <a
-                             href="https://themeforest.net/user/themeholy">Themeholy</a>. All Rights Reserved.</p>
+                     <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> {{ date('Y') }} <a
+                             href="{{ route('home-dashboard') }}">{{ $settings['site_copyright'] }}</a>. All Rights
+                         Reserved.</p>
                  </div>
                  <div class="col-lg-6 text-end d-none d-lg-block">
                      <div class="footer-links">
                          <ul>
-                             <li><a href="about.html">Privacy Policy</a></li>
-                             <li><a href="about.html">Terms of Use</a></li>
+                             <li><a href="{{ route('profileSchool') }}">Profil Sekolah</a></li>
+                            <li><a href="{{ route('contact-us') }}">Kontak Kami</a></li>
                          </ul>
                      </div>
                  </div>
@@ -193,6 +157,62 @@ All Js File
 
  <!-- Main Js File -->
  <script src="{{ asset('frontend') }}/js/main.js"></script>
+
+ <script>
+     // Ambil kota berdasarkan provinsi
+     $('#province').change(function() {
+         let provinceId = $(this).val();
+         $('#city').html('<option value="">Loading...</option>');
+         $('#district').html('<option value="">-- Pilih Kecamatan --</option>');
+         $('#village').html('<option value="">-- Pilih Desa/Kelurahan --</option>');
+
+         $.post('/get-cities', {
+             province_id: provinceId,
+             _token: '{{ csrf_token() }}'
+         }, function(data) {
+             $('#city').html('<option value="">-- Pilih Kota/Kabupaten --</option>');
+             $.each(data, function(index, city) {
+                 $('#city').append('<option value="' + city.code + '">' + city.name +
+                     '</option>');
+             });
+         });
+     });
+
+     // Ambil kecamatan berdasarkan kota
+     $('#city').change(function() {
+         let cityId = $(this).val();
+         $('#district').html('<option value="">Loading...</option>');
+         $('#village').html('<option value="">-- Pilih Desa/Kelurahan --</option>');
+
+         $.post('/get-districts', {
+             city_id: cityId,
+             _token: '{{ csrf_token() }}'
+         }, function(data) {
+             $('#district').html('<option value="">-- Pilih Kecamatan --</option>');
+             $.each(data, function(index, district) {
+                 $('#district').append('<option value="' + district.code + '">' + district
+                     .name + '</option>');
+             });
+         });
+     });
+
+     // Ambil desa/kelurahan berdasarkan kecamatan
+     $('#district').change(function() {
+         let districtId = $(this).val();
+         $('#village').html('<option value="">Loading...</option>');
+
+         $.post('/get-villages', {
+             district_id: districtId,
+             _token: '{{ csrf_token() }}'
+         }, function(data) {
+             $('#village').html('<option value="">-- Pilih Desa/Kelurahan --</option>');
+             $.each(data, function(index, village) {
+                 $('#village').append('<option value="' + village.code + '">' + village.name +
+                     '</option>');
+             });
+         });
+     });
+ </script>
 
  </body>
 

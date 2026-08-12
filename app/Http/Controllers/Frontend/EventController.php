@@ -15,9 +15,9 @@ class EventController extends Controller
     {
         //
 
-        $title = 'Event | SMPN 2 Purwosari';
+        $title = 'Event | SMP Islam Nurul Ulum';
 
-        $events = Event::all();
+        $events = Event::latest()->paginate(9);
 
         return view('frontend.events.event-view', compact([
             'title',
@@ -44,9 +44,13 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        //
+        $event = Event::where('slug', $slug)->firstOrFail();
+        $title = $event->event_name . ' | SMP Islam Nurul Ulum';
+        $recentEvents = Event::latest()->where('id', '!=', $event->id)->take(5)->get();
+        
+        return view('frontend.events.event-detail', compact('event', 'title', 'recentEvents'));
     }
 
     /**

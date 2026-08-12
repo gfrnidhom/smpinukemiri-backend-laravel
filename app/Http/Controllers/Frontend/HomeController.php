@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Classes;
 use App\Models\Event;
 use App\Models\Partner;
 use App\Models\Post;
 use App\Models\Program;
+use App\Models\Student;
+use App\Models\Teacher;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -17,20 +20,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
-
-        $title = 'Beranda | SMPN 2 Purwosari';
+        $title = 'Beranda | SMP Islam Nurul Ulum';
 
         $programs = Program::all();
-
         $partners = Partner::all();
-
         $blogs = Post::where('status', 'published')->limit(6)->latest()->get();
         $events = Event::all();
-
         $testimonials = Testimonial::all();
 
-        // dd($blogs);
+        $totalTeachers = Teacher::count();
+        $totalStudents = Student::count();
+        $totalClasses = Classes::count();
+        $totalExtra = Program::count();
 
         return view('frontend.home-view.index', compact([
             'title',
@@ -38,8 +39,13 @@ class HomeController extends Controller
             'programs',
             'partners',
             'testimonials',
-            'events'
+            'events',
+            'totalTeachers',
+            'totalStudents',
+            'totalClasses',
+            'totalExtra',
         ]));
+        //
     }
 
     /**

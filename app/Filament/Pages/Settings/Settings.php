@@ -59,6 +59,10 @@ class Settings extends BaseSettings
                                 ->label('Logo Kedua Website')
                                 ->directory('settings')
                                 ->required(),
+                            FileUpload::make('home_image')
+                                ->label('Gambar Halaman Utama')
+                                ->directory('settings')
+                                ->required(),
                             ToggleButtons::make('maintenance_mode')
                                 ->label('Mode Pemeliharaan')
                                 ->required()

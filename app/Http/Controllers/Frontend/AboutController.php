@@ -30,17 +30,30 @@ class AboutController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function visionandmission()
     {
         //
+        $title = 'Visi dan Misi | SMPN Islam Nurul Ulum';
+
+
+        return view('frontend.abouts.vision-mission-view', compact([
+            'title',
+
+        ]));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function profileSchool()
     {
-        //
+        $title = 'Profil Sekolah | SMPN Islam Nurul Ulum';
+
+
+        return view('frontend.abouts.school-profile-view', compact([
+            'title',
+
+        ]));
     }
 
     /**

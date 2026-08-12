@@ -12,6 +12,9 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -23,7 +26,7 @@ class SchoolHeadmasterResource extends Resource
     protected static ?string $navigationGroup = 'Kepegawaian';
     protected static ?int $navigationSort = 1;
     protected static ?string $navigationLabel = 'Kepala Sekolah';
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user';
 
     public static function form(Form $form): Form
     {
@@ -93,6 +96,14 @@ class SchoolHeadmasterResource extends Resource
                     RichEditor::make('remarks')
                         ->label('Catatan')
                         ->columnSpanFull(),
+
+                    Forms\Components\FileUpload::make('image')
+                        ->image()
+                        ->directory('headmaster')
+                        ->imageEditor()
+                        ->imageEditorViewportWidth('550')
+                        ->imageEditorViewportHeight('400')
+                        ->columnSpanFull(),
                 ])->columns(2),
             ]);
     }
@@ -102,23 +113,17 @@ class SchoolHeadmasterResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Nama Kepala Sekolah')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('nip')
+                    ->label('NIP')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('position')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('gender'),
-                Tables\Columns\TextColumn::make('birthplace')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('birthdate')
-                    ->date()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('employment_status')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('religion'),
-                Tables\Columns\TextColumn::make('qualification')
-                    ->searchable(),
+
+                Tables\Columns\TextColumn::make('gender')
+                    ->label('Jenis Kelamin'),
+
                 Tables\Columns\TextColumn::make('specialization')
+                    ->label('Mata Pelajaran')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -133,7 +138,9 @@ class SchoolHeadmasterResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
+                ViewAction::make(),
+                DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

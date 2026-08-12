@@ -6,6 +6,7 @@ use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -23,31 +24,49 @@ class UserResource extends Resource
     protected static ?string $navigationLabel = 'Pengguna';
     protected static ?string $navigationIcon = 'heroicon-o-user';
 
+    public static function getNavigationLabel(): string
+    {
+        return 'Pengguna';
+    }
+
+    public function getTitle(): string
+    {
+        return 'Pengguna';
+    }
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('username')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\DateTimePicker::make('email_verified_at'),
-                Forms\Components\TextInput::make('password')
-                    ->password()
-                    ->required()
-                    ->maxLength(255),
-                Select::make('role')
-                    ->label('Akses Pengguna')
-                    ->options([
-                        'admin' => 'Administrator',
-                        'users' => 'Users',
-                    ])->required(),
+                Section::make([
+                    Forms\Components\TextInput::make('username')
+                        ->label('Username')
+                        ->maxLength(255)
+                        ->default(null),
+                    Forms\Components\TextInput::make('name')
+                        ->label('Nama Lengkap')
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\TextInput::make('email')
+                        ->label('Email')
+                        ->email()
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\DateTimePicker::make('email_verified_at')
+                        ->label('Email Verified At')
+                        ->nullable()
+                        ->default(now()),
+                    Forms\Components\TextInput::make('password')
+                        ->label('Password')
+                        ->password()
+                        ->required()
+                        ->maxLength(255),
+                    Select::make('role')
+                        ->label('Akses Pengguna')
+                        ->options([
+                            'admin' => 'Administrator',
+                            'users' => 'Users',
+                        ])->required(),
+                ])
             ]);
     }
 
@@ -56,15 +75,22 @@ class UserResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('username')
+                    ->label('Username')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Nama Lengkap')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
+                    ->label('Email')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email_verified_at')
+                    ->label('Verifikasi Email')
                     ->dateTime()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('role'),
+                Tables\Columns\TextColumn::make('role')
+                    ->label('Akses Pengguna')
+                    ->badge()
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -79,6 +105,8 @@ class UserResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

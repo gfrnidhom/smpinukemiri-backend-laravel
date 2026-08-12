@@ -5,6 +5,7 @@
 
 @include('frontend._partials.menu')
 
+@include('sweetalert::alert')
 
 @yield('main-content')
 
